@@ -24,11 +24,15 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 | Allikas | Staatus | Põhjus |
 | --- | --- | --- |
 | [Hiiu Resto ametlik menüü](https://hiiuresto.eu/menuu/) | töötab | Ametlik leht sisaldab kuupäevaga nädalamenüüd, hindu, kellaaega ja JSON-LD asukohaandmeid. Collector kontrollib enne päringut `robots.txt` faili. |
-| [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/kasutustingimused) | vajab kirjalikku luba | Kasutustingimused keelavad automatiseeritud allalaadimise, kopeerimise ja kolmandatele isikutele kättesaadavaks tegemise. |
-| [Päevapraad.ee](https://www.paevapraad.ee/andmekaitse-uldmaarus-ja-kasutajatingimused) | vajab kirjalikku luba | Tingimused keelavad veebilehe info kopeerimise, reprodutseerimise ja levitamise ilma kirjaliku loata. |
-| [Lunchtime.ee](https://www.lunchtime.ee/) | pole saadaval | Domeeni juur kuvab praegu ainult tühja serverikataloogi; avalikku API-t, RSS-i ega menüüd ei leitud. |
+| [Kristiine Keskuse ametlik lõunavoog](https://www.kristiinekeskus.ee/lounapakkumised) | töötab | Avalik masinloetav Markdown-vaade sisaldab kuupäevaga KFC, Sunny Pocketi, Poke Bowl & MEZE, MySushi ja LIDO pakkumisi. LIDO menüü seotakse LIDO enda kinnituse põhjal Kristiine, Solarise, Ülemiste ja Mustamäe asukohaga. |
+| [Reval Café ametlik menüü](https://revalcafe.ee/paevapakkumised/) | töötab | Kuupäevaga nädalamenüü seotakse 11 ametlikult loetletud Tallinna kohvikuga; päevapõhiseid erandeid, näiteks Meremuuseumi esmaspäeva, arvestatakse. |
+| [Vapiano ametlik lõunamenüü](https://vapiano.ee/louna/) | töötab | Jooksva nädala nähtav menüü seotakse Foorumi, Solarise, Ülemiste ja Rocca al Mare restoraniga. |
+| [AMPSi ametlik päevamenüü](https://amps.ee/lounapakkumised/) | töötab | Kuupäevaga asukohapõhised pakkumised Järve ja Arena AMPSile. |
+| [PROTO ametlik lõunamenüü](https://www.prototehas.ee/menuu/) | töötab | Kuupäevaga supi suurused ja lõunabufee hind koos buffet' koostisega. |
+| [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine) | vajab kirjalikku luba | Teenus pakub partneritele andmete jagamist teistesse keskkondadesse, kuid kasutustingimused ei luba andmeid omal algatusel kopeerida. |
+| [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
 
-Agregaatorite sisu ei kopeerita enne selgesõnalise loa saamist. Uusi allikaid tuleb lisada ametlike restoranilehtede adapteritena faili `scripts/collect.ts` või kuupäevaga käsitsi faili `data/manual-offers.json`.
+Agregaatorite sisu ei kopeerita enne selgesõnalise loa saamist. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Uusi allikaid lisatakse ametlike restoranilehtede adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
 
 ## Kohalik käivitamine
 
@@ -56,7 +60,7 @@ Kõik kontrollid korraga:
 pnpm check
 ```
 
-Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse ning hinnavahemiku.
+Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi ja PROTO menüüparserid.
 
 ## Automaatne uuendamine
 
@@ -96,7 +100,8 @@ Iga pakkumine sisaldab välju `restaurantId`, `restaurantName`, `address`, `lati
 
 ## Piirangud
 
-- Aktiivne automaatallikas on praegu ainult Hiiu Resto ametlik menüü; üle-eestilise katvuse saavutamiseks on vaja rohkem ametlikke adaptereid või agregaatorite kirjalikku luba.
+- Aktiivsed automaatallikad katavad praegu eelkõige Tallinna; üle-eestilise katvuse saavutamiseks on vaja rohkem ametlikke adaptereid või agregaatorite kirjalikku luba.
+- Ühe menüü sidumine mitme asukohaga toimub ainult siis, kui kett või keskuse ametlik allikas kinnitab ühise pakkumise. LIDO Apollo Plaza on ühismenüüst teadlikult välja jäetud.
 - Facebooki integratsiooni ei aktiveerita ega proovita autentimispiirangutest mööda minna.
 - Nominatimi avalik teenus sobib väikese koormusega MVP-le, mitte suure liiklusega kommertsteenusele.
 - Lemmikud püsivad ainult samas brauseris ja seadmes.
