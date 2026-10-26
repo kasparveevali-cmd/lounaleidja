@@ -4,19 +4,30 @@ import {
   CalendarDays,
   CheckCircle2,
   Database,
+  HardDrive,
   Info,
   List,
   Map as MapIcon,
   RefreshCw,
   Salad,
   SlidersHorizontal,
+  Trash2,
+  Upload,
 } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
 import { Filters } from './components/Filters'
 import { MapView } from './components/MapView'
 import { RestaurantCard } from './components/RestaurantCard'
 import { SearchPanel } from './components/SearchPanel'
 import { groupFilterAndSort, todayInTallinn } from './lib/offers'
+import {
+  mergePersonalFeed,
+  parsePersonalFeedJson,
+  PERSONAL_FEED_REFRESH_REQUEST_EVENT,
+  PERSONAL_FEED_STORAGE_KEY,
+  PERSONAL_FEED_UPDATED_EVENT,
+  type PersonalFeed,
+} from './lib/personal-feed'
 import type { LocationPoint, OffersBundle, SortMode } from './types'
 
 const emptyBundle: OffersBundle = {
@@ -44,8 +55,35 @@ function todayLabel() {
   }).format(new Date())
 }
 
+interface PersonalFeedStorageState {
+  feed: PersonalFeed | null
+  hasStoredFeed: boolean
+  error: string | null
+}
+
+function readPersonalFeedStorage(today: string): PersonalFeedStorageState {
+  try {
+    const raw = localStorage.getItem(PERSONAL_FEED_STORAGE_KEY)
+    if (raw === null) return { feed: null, hasStoredFeed: false, error: null }
+    return {
+      feed: parsePersonalFeedJson(raw, today),
+      hasStoredFeed: true,
+      error: null,
+    }
+  } catch (error) {
+    return {
+      feed: null,
+      hasStoredFeed: true,
+      error: error instanceof Error ? error.message : 'Isiklikku voogu ei saanud lugeda.',
+    }
+  }
+}
+
 export default function App() {
-  const [bundle, setBundle] = useState<OffersBundle>(emptyBundle)
+  const today = todayInTallinn()
+  const [officialBundle, setOfficialBundle] = useState<OffersBundle>(emptyBundle)
+  const [personalFeedStorage, setPersonalFeedStorage] = useState(() => readPersonalFeedStorage(today))
+  const [personalFeedMessage, setPersonalFeedMessage] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState<string | null>(null)
   const [location, setLocation] = useState<LocationPoint | null>(null)
@@ -58,7 +96,17 @@ export default function App() {
   const [confirmedOnly, setConfirmedOnly] = useState(true)
   const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(readFavorites)
-  const today = todayInTallinn()
+  const importInputRef = useRef<HTMLInputElement>(null)
+  const refreshTimerRef = useRef<number | null>(null)
+  const personalFeed = personalFeedStorage.feed
+  const personalFeedError = personalFeedStorage.error
+  const hasStoredPersonalFeed = personalFeedStorage.hasStoredFeed
+
+  const loadPersonalFeed = useCallback((message?: string) => {
+    const next = readPersonalFeedStorage(today)
+    setPersonalFeedStorage(next)
+    setPersonalFeedMessage(next.error ? null : message ?? null)
+  }, [today])
 
   useEffect(() => {
     let active = true
@@ -67,13 +115,48 @@ export default function App() {
         if (!response.ok) throw new Error(`Andmefail vastas ${response.status}`)
         return response.json() as Promise<OffersBundle>
       })
-      .then((data) => active && setBundle(data))
+      .then((data) => active && setOfficialBundle(data))
       .catch(() => active && setLoadError('Lõunapakkumiste andmeid ei saanud laadida. Proovi lehte värskendada.'))
       .finally(() => active && setLoading(false))
     return () => {
       active = false
     }
   }, [])
+
+  useEffect(() => {
+    const initialReadTimer = window.setTimeout(() => loadPersonalFeed(), 0)
+    const handleUpdated = () => {
+      if (refreshTimerRef.current !== null) window.clearTimeout(refreshTimerRef.current)
+      refreshTimerRef.current = null
+      const extensionStatus = document.documentElement.dataset.lounaleidjaPersonalFeed
+      const extensionError = document.documentElement.dataset.lounaleidjaPersonalError
+      if (extensionStatus === 'error') {
+        setPersonalFeedStorage({
+          ...readPersonalFeedStorage(today),
+          error: extensionError || 'Brauserilaiendus ei saanud isiklikku voogu uuendada.',
+        })
+        setPersonalFeedMessage(null)
+      } else {
+        loadPersonalFeed('Isiklik voog uuendati brauseris.')
+      }
+    }
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === PERSONAL_FEED_STORAGE_KEY) loadPersonalFeed('Isiklik voog muutus teises vahekaardis.')
+    }
+    document.addEventListener(PERSONAL_FEED_UPDATED_EVENT, handleUpdated)
+    window.addEventListener('storage', handleStorage)
+    return () => {
+      window.clearTimeout(initialReadTimer)
+      document.removeEventListener(PERSONAL_FEED_UPDATED_EVENT, handleUpdated)
+      window.removeEventListener('storage', handleStorage)
+      if (refreshTimerRef.current !== null) window.clearTimeout(refreshTimerRef.current)
+    }
+  }, [loadPersonalFeed, today])
+
+  const bundle = useMemo(
+    () => mergePersonalFeed(officialBundle, personalFeed),
+    [officialBundle, personalFeed],
+  )
 
   const restaurants = useMemo(
     () =>
@@ -94,6 +177,17 @@ export default function App() {
 
   const offerCount = restaurants.reduce((sum, restaurant) => sum + restaurant.offers.length, 0)
   const activeSources = bundle.sources.filter((source) => source.status === 'active')
+  const personalSourceCount = personalFeed
+    ? new Set(personalFeed.offers.map((offer) => offer.sourceName)).size
+    : 0
+
+  const personalUpdatedAt = personalFeed
+    ? new Intl.DateTimeFormat('et-EE', {
+        timeZone: 'Europe/Tallinn',
+        hour: '2-digit',
+        minute: '2-digit',
+      }).format(new Date(personalFeed.generatedAt))
+    : null
 
   function toggleFavorite(restaurantId: string) {
     setFavoriteIds((current) => {
@@ -104,6 +198,45 @@ export default function App() {
       if (next.size === 0) setFavoritesOnly(false)
       return next
     })
+  }
+
+  async function importPersonalFeed(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.currentTarget.files?.[0]
+    if (!file) return
+    try {
+      if (file.size > 5 * 1024 * 1024) throw new Error('Isikliku voo JSON võib olla kuni 5 MB')
+      const parsed = parsePersonalFeedJson(await file.text(), today)
+      localStorage.setItem(PERSONAL_FEED_STORAGE_KEY, JSON.stringify(parsed))
+      setPersonalFeedStorage({ feed: parsed, hasStoredFeed: true, error: null })
+      setPersonalFeedMessage(`Imporditi ${parsed.offers.length} tänast pakkumist.`)
+    } catch (error) {
+      setPersonalFeedStorage((current) => ({
+        ...current,
+        error: error instanceof Error ? error.message : 'Isiklikku voogu ei saanud importida.',
+      }))
+      setPersonalFeedMessage(null)
+    } finally {
+      event.currentTarget.value = ''
+    }
+  }
+
+  function requestPersonalFeedRefresh() {
+    setPersonalFeedStorage((current) => ({ ...current, error: null }))
+    setPersonalFeedMessage('Värskendustaotlus saadeti brauserilaiendusele…')
+    document.dispatchEvent(new Event(PERSONAL_FEED_REFRESH_REQUEST_EVENT))
+    if (refreshTimerRef.current !== null) window.clearTimeout(refreshTimerRef.current)
+    refreshTimerRef.current = window.setTimeout(() => {
+      refreshTimerRef.current = null
+      loadPersonalFeed('Isiklik voog loeti brauseri salvestusest uuesti.')
+    }, 1_500)
+  }
+
+  function removePersonalFeed() {
+    if (refreshTimerRef.current !== null) window.clearTimeout(refreshTimerRef.current)
+    refreshTimerRef.current = null
+    localStorage.removeItem(PERSONAL_FEED_STORAGE_KEY)
+    setPersonalFeedStorage({ feed: null, hasStoredFeed: false, error: null })
+    setPersonalFeedMessage('Isiklik voog eemaldati sellest brauserist.')
   }
 
   return (
@@ -133,6 +266,44 @@ export default function App() {
           onLocationChange={setLocation}
           onRadiusChange={setRadiusKm}
         />
+
+        <section
+          className={`personal-feed-banner${personalFeed ? ' active' : ''}${personalFeedError ? ' invalid' : ''}`}
+          aria-label="Isiklikud andmeallikad"
+        >
+          <span className="personal-feed-icon"><HardDrive size={18} /></span>
+          <div className="personal-feed-copy">
+            <strong>Isiklikud allikad</strong>
+            <span>
+              {personalFeed
+                ? `${personalFeed.offers.length} tänast pakkumist · ${personalSourceCount} ${personalSourceCount === 1 ? 'isiklik allikas' : 'isiklikku allikat'} · uuendatud ${personalUpdatedAt}`
+                : 'Impordi JSON või kasuta kohalikku brauserilaiendust. Andmed jäävad sellesse brauserisse.'}
+            </span>
+            {personalFeedError && <small className="personal-feed-error" role="alert">{personalFeedError}</small>}
+            {personalFeedMessage && <small className="personal-feed-message" aria-live="polite">{personalFeedMessage}</small>}
+          </div>
+          <div className="personal-feed-actions">
+            <input
+              ref={importInputRef}
+              className="sr-only"
+              type="file"
+              accept="application/json,.json"
+              onChange={importPersonalFeed}
+              aria-label="Impordi isikliku voo JSON"
+            />
+            <button type="button" onClick={() => importInputRef.current?.click()}>
+              <Upload size={14} /> Impordi JSON
+            </button>
+            <button type="button" onClick={requestPersonalFeedRefresh}>
+              <RefreshCw size={14} /> Uuenda
+            </button>
+            {hasStoredPersonalFeed && (
+              <button type="button" className="danger" onClick={removePersonalFeed}>
+                <Trash2 size={14} /> Eemalda
+              </button>
+            )}
+          </div>
+        </section>
 
         <section className="results-section">
           <div className="results-heading">
@@ -213,8 +384,8 @@ export default function App() {
             <span className="section-kicker">Läbipaistev algusest peale</span>
             <h2>Päris andmed.<br />Aus staatus.</h2>
             <p>
-              Iga pakkumine peab pärinema kuupäevaga algallikast. Kui automaatne kasutamine pole lubatud,
-              me sisu ei kopeeri.
+              Avalik voog kasutab ainult lubatud kuupäevaga algallikaid. Isiklikult imporditud
+              koondlehtede andmed jäävad sellesse brauserisse ja on selgelt märgistatud.
             </p>
           </div>
           <div className="source-list">

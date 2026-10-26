@@ -20,6 +20,10 @@ function formatFetchedAt(value: string) {
 
 export function RestaurantCard({ restaurant, favorite, onToggleFavorite }: RestaurantCardProps) {
   const firstOffer = restaurant.offers[0]
+  const sources = [...new Map(restaurant.offers.map((offer) => [
+    `${offer.sourceName}|${offer.sourceUrl}`,
+    { name: offer.sourceName, url: offer.sourceUrl },
+  ])).values()]
   const timeLabel = firstOffer.lunchStartTime
     ? `${firstOffer.lunchStartTime}–${firstOffer.lunchEndTime ?? ''}`
     : null
@@ -32,7 +36,7 @@ export function RestaurantCard({ restaurant, favorite, onToggleFavorite }: Resta
           <div className="card-title-row">
             <h3>{restaurant.restaurantName}</h3>
             {restaurant.verificationStatus === 'verified' && (
-              <span className="verified-badge" title="Pakkumine pärineb kuupäevaga ametlikult menüülehelt">
+              <span className="verified-badge" title="Pakkumine pärineb tänase kuupäevaga algallikast">
                 <Check size={13} strokeWidth={3} /> Kinnitatud
               </span>
             )}
@@ -70,13 +74,15 @@ export function RestaurantCard({ restaurant, favorite, onToggleFavorite }: Resta
 
       <footer className="card-footer">
         <div className="source-note">
-          <span>{restaurant.sourceName}</span>
+          <span>{sources.length === 1 ? sources[0].name : `${sources.length} algallikat`}</span>
           <small>Kontrollitud {formatFetchedAt(restaurant.fetchedAt)}</small>
         </div>
         <div className="card-actions">
-          <a href={restaurant.sourceUrl} target="_blank" rel="noreferrer">
-            Vaata menüüd <ArrowUpRight size={15} />
-          </a>
+          {sources.map((source) => (
+            <a href={source.url} target="_blank" rel="noreferrer" key={`${source.name}|${source.url}`}>
+              {sources.length === 1 ? 'Vaata menüüd' : source.name.split(' · ')[0]} <ArrowUpRight size={15} />
+            </a>
+          ))}
           <a className="directions" href={directionsUrl} target="_blank" rel="noreferrer">
             <Navigation size={15} /> Juhised
           </a>

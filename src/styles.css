@@ -406,6 +406,96 @@ main {
   font-size: 10px;
 }
 
+.personal-feed-banner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(85, 116, 102, 0.2);
+  border-radius: 14px;
+  background: rgba(251, 250, 247, 0.72);
+}
+
+.personal-feed-banner.active {
+  border-color: rgba(77, 139, 104, 0.35);
+  background: rgba(237, 244, 239, 0.88);
+}
+
+.personal-feed-banner.invalid {
+  border-color: rgba(152, 80, 62, 0.3);
+  background: rgba(246, 233, 229, 0.74);
+}
+
+.personal-feed-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--sage);
+  background: var(--sage-light);
+}
+
+.personal-feed-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.personal-feed-copy strong {
+  font-size: 12px;
+}
+
+.personal-feed-copy > span,
+.personal-feed-copy small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.personal-feed-copy .personal-feed-error {
+  color: #8a4939;
+}
+
+.personal-feed-copy .personal-feed-message {
+  color: #3e6d53;
+}
+
+.personal-feed-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.personal-feed-actions button {
+  min-height: 34px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: #4e5750;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 10px;
+  font-weight: 680;
+  cursor: pointer;
+}
+
+.personal-feed-actions button:hover {
+  border-color: #9caaa2;
+  background: #fff;
+}
+
+.personal-feed-actions button.danger {
+  color: #8a4939;
+}
+
 .results-section {
   position: relative;
   z-index: 1;
@@ -786,6 +876,8 @@ main {
 .card-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 6px;
 }
 
@@ -965,6 +1057,12 @@ main {
   text-decoration: none;
 }
 
+.map-popup-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 11px;
+}
+
 .data-section {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -1110,6 +1208,16 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .personal-feed-banner {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .personal-feed-actions {
+    grid-column: 2;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
   .site-footer {
     grid-template-columns: 1fr 1fr;
   }
@@ -1165,6 +1273,19 @@ main {
 
   .results-section {
     padding: 70px 0 85px;
+  }
+
+  .personal-feed-banner {
+    align-items: start;
+    padding: 12px;
+  }
+
+  .personal-feed-actions {
+    grid-column: 1 / -1;
+  }
+
+  .personal-feed-actions button {
+    flex: 1 1 auto;
   }
 
   .results-heading {

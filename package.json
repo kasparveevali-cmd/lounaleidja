@@ -15,6 +15,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "collect": "tsx scripts/collect.ts",
+    "collect:personal": "node --import tsx scripts/collect-personal.ts",
     "check": "pnpm lint && pnpm test && pnpm build"
   },
   "dependencies": {

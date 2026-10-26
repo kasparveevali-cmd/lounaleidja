@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Lõunaleidja isiklikud allikad",
+  "description": "Lisab Päevapraad.ee ja Päevapakkumised.ee andmed ainult sinu brauseris avatud Lõunaleidjasse.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.paevapraad.ee/*",
+    "https://www.xn--pevapakkumised-5hb.ee/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://kasparveevali-cmd.github.io/lounaleidja/*",
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -78,9 +78,19 @@ export function MapView({ restaurants, location, radiusKm }: MapViewProps) {
             `<li><span>${escapeHtml(offer.offerName)}</span><b>${offer.price.toLocaleString('et-EE', { minimumFractionDigits: 2 })} €</b></li>`,
         )
         .join('')
+      const popupSources = [...new Map(restaurant.offers.map((offer) => [
+        `${offer.sourceName}|${offer.sourceUrl}`,
+        { name: offer.sourceName, url: offer.sourceUrl },
+      ])).values()]
+      const sourceLinks = popupSources
+        .map((source) => {
+          const label = popupSources.length === 1 ? 'Ava menüü' : source.name.split(' · ')[0]
+          return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(label)} ↗</a>`
+        })
+        .join('')
       L.marker([restaurant.latitude, restaurant.longitude], { icon })
         .bindPopup(
-          `<div class="map-popup"><strong>${escapeHtml(restaurant.restaurantName)}</strong><small>${escapeHtml(restaurant.address)}</small><ul>${offerPreview}</ul><a href="${restaurant.sourceUrl}" target="_blank" rel="noreferrer">Ava menüü ↗</a></div>`,
+          `<div class="map-popup"><strong>${escapeHtml(restaurant.restaurantName)}</strong><small>${escapeHtml(restaurant.address)}</small><ul>${offerPreview}</ul><div class="map-popup-sources">${sourceLinks}</div></div>`,
           { minWidth: 240 },
         )
         .addTo(map)
