@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T19:53:15.778Z",
+  "generatedAt": "2026-10-26T20:07:54.757Z",
   "timezone": "Europe/Tallinn",
   "offers": [
     {
@@ -17,7 +17,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -35,7 +35,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -53,7 +53,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -71,7 +71,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -89,7 +89,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -107,7 +107,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -125,7 +125,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -143,7 +143,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -161,7 +161,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -179,7 +179,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -197,7 +197,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -215,7 +215,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -233,7 +233,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -251,7 +251,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -269,7 +269,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -287,7 +287,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -305,7 +305,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -323,7 +323,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -341,7 +341,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -359,7 +359,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -377,7 +377,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -395,7 +395,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -413,7 +413,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -431,7 +431,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -449,7 +449,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -467,7 +467,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -485,7 +485,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -503,7 +503,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -521,7 +521,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -539,7 +539,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -557,7 +557,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -575,7 +575,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -593,7 +593,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -611,7 +611,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -629,7 +629,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -647,7 +647,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -665,7 +665,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -683,7 +683,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -701,7 +701,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -719,7 +719,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -737,7 +737,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -755,7 +755,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -773,7 +773,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -791,7 +791,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -809,7 +809,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -827,7 +827,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -845,7 +845,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -863,7 +863,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -881,7 +881,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -899,7 +899,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -917,7 +917,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -935,7 +935,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -953,7 +953,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -971,7 +971,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -989,7 +989,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1007,7 +1007,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1025,7 +1025,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1043,7 +1043,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1061,7 +1061,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1079,7 +1079,7 @@
       "lunchEndTime": null,
       "sourceName": "Reval Café ametlik menüü",
       "sourceUrl": "https://revalcafe.ee/paevapakkumised/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1097,7 +1097,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1115,7 +1115,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1133,7 +1133,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1151,7 +1151,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1169,7 +1169,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1187,7 +1187,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1205,7 +1205,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1223,7 +1223,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1241,7 +1241,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1259,7 +1259,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1277,7 +1277,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1295,7 +1295,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1313,7 +1313,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1331,7 +1331,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1349,7 +1349,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1367,7 +1367,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1385,7 +1385,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1403,7 +1403,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1421,7 +1421,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1439,7 +1439,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1457,7 +1457,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1475,7 +1475,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1493,7 +1493,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1511,7 +1511,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     },
     {
@@ -1529,7 +1529,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-26T19:53:15.778Z",
+      "fetchedAt": "2026-10-26T20:07:54.757Z",
       "verificationStatus": "verified"
     }
   ],
@@ -1540,7 +1540,7 @@
       "url": "https://hiiuresto.eu/menuu/",
       "status": "active",
       "message": "Kuupäevaga nädalamenüü ametlikult restoranilehelt.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "kristiine-lunch",
@@ -1548,7 +1548,7 @@
       "url": "https://www.kristiinekeskus.ee/lounapakkumised",
       "status": "active",
       "message": "Ametlik masinloetav voog viie söögikoha menüüdega; LIDO menüü kehtib neljas Tallinna LIDO-s.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "reval-cafe",
@@ -1556,7 +1556,7 @@
       "url": "https://revalcafe.ee/paevapakkumised/",
       "status": "active",
       "message": "Kuupäevaga nädalamenüü Tallinna Reval Café asukohtadele.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "vapiano",
@@ -1564,7 +1564,7 @@
       "url": "https://vapiano.ee/louna/",
       "status": "active",
       "message": "Nädalapakkumised neljale Tallinna Vapiano restoranile.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "amps",
@@ -1572,7 +1572,7 @@
       "url": "https://amps.ee/lounapakkumised/",
       "status": "active",
       "message": "Kuupäevaga pakkumised Järve ja Arena AMPSi asukohtadele.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "proto",
@@ -1580,7 +1580,7 @@
       "url": "https://www.prototehas.ee/menuu/",
       "status": "active",
       "message": "Kuupäevaga supi- ja lõunabufee pakkumised.",
-      "lastSuccessAt": "2026-10-26T19:53:15.778Z"
+      "lastSuccessAt": "2026-10-26T20:07:54.757Z"
     },
     {
       "id": "paevapakkumised",

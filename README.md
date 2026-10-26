@@ -32,7 +32,7 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 | [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine) | vajab kirjalikku luba | Teenus pakub partneritele andmete jagamist teistesse keskkondadesse, kuid kasutustingimused ei luba andmeid omal algatusel kopeerida. |
 | [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
 
-Agregaatorite sisu ei kopeerita enne selgesõnalise loa saamist. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Uusi allikaid lisatakse ametlike restoranilehtede adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
+Agregaatorite sisu ei kopeerita enne selgesõnalise loa saamist. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Litsentsitud JSON-voo adapter, täpne skeem ja GitHubi secret'ite seadistus on kirjeldatud failis [`docs/litsentsitud-partnerivoog.md`](docs/litsentsitud-partnerivoog.md). Uusi allikaid lisatakse ametlike restoranilehtede adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
 
 ## Kohalik käivitamine
 
@@ -73,8 +73,9 @@ Töövoog:
 3. loeb ametlikult lehelt ainult tänase kuupäevaga pakkumised;
 4. normaliseerib andmed, valideerib väljad ja eemaldab duplikaadid;
 5. ühe allika vea korral jätkab teistega ning säilitab sama päeva varasema vahemälu;
-6. käivitab lindi, testid ja production-buildi;
-7. commit'ib muutunud andmefaili ning avaldab sama buildi GitHub Pagesis.
+6. loeb seadistuse olemasolul litsentsitud partnerivoo ning aktiveerib ainult selles tegelikult töötava agregaatori;
+7. käivitab lindi, testid ja production-buildi;
+8. commit'ib muutunud andmefaili ning avaldab sama buildi GitHub Pagesis.
 
 Veateated jäävad nii Actionsi logisse kui ka andmefaili `errors` massiivi. Avalikus vaates näidatakse ainult `offerDate` väärtusega tänaseid pakkumisi.
 

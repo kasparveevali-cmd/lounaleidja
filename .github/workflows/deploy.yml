@@ -38,6 +38,9 @@ jobs:
 
       - name: Uuenda lõunapakkumisi
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          LOUNALEIDJA_PARTNER_FEED_URL: ${{ secrets.LOUNALEIDJA_PARTNER_FEED_URL }}
+          LOUNALEIDJA_PARTNER_FEED_TOKEN: ${{ secrets.LOUNALEIDJA_PARTNER_FEED_TOKEN }}
         run: pnpm collect
 
       - name: Kontrolli ja ehita

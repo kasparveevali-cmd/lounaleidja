@@ -12,6 +12,7 @@ import {
   parseVapianoHtml,
   type ParsedOffer,
 } from './parsers.ts'
+import { parsePartnerFeed, partnerSourceId } from './partner-feed.ts'
 
 const outputPath = new URL('../public/data/offers.json', import.meta.url)
 const manualPath = new URL('../data/manual-offers.json', import.meta.url)
@@ -186,6 +187,30 @@ async function fetchSource(url: string, accept?: string) {
   await assertRobotsAllowed(url)
   await new Promise((resolve) => setTimeout(resolve, 1100))
   return (await request(url, accept)).text()
+}
+
+async function collectLicensedPartnerFeed(now = new Date()) {
+  const feedUrl = process.env.LOUNALEIDJA_PARTNER_FEED_URL?.trim()
+  if (!feedUrl) return []
+
+  const target = new URL(feedUrl)
+  if (target.protocol !== 'https:') throw new Error('Partnerivoo URL peab kasutama HTTPS-i')
+  const token = process.env.LOUNALEIDJA_PARTNER_FEED_TOKEN?.trim()
+  const response = await fetch(target, {
+    headers: {
+      'User-Agent': userAgent,
+      Accept: 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+    signal: AbortSignal.timeout(20_000),
+  })
+  if (!response.ok) throw new Error(`Partnerivoog vastas HTTP ${response.status}`)
+  if (!response.headers.get('content-type')?.toLocaleLowerCase('en').includes('json')) {
+    throw new Error('Partnerivoog ei tagastanud JSON-i')
+  }
+  const text = await response.text()
+  if (text.length > 10 * 1024 * 1024) throw new Error('Partnerivoog ületab suuruse piiri')
+  return parsePartnerFeed(JSON.parse(text) as unknown, tallinnDateParts(now).iso)
 }
 
 function offersForLocation(
@@ -482,7 +507,8 @@ const collectors: Array<{
 
 async function main() {
   const now = new Date()
-  const today = tallinnDateParts(now).iso
+  const date = tallinnDateParts(now)
+  const today = date.iso
   const previous = await readJson<OffersBundle | null>(outputPath, null)
   const manualOffers = await readJson<LunchOffer[]>(manualPath, [])
   const errors: OffersBundle['errors'] = []
@@ -501,6 +527,31 @@ async function main() {
       console.error(`[${collector.id}] ${message}`)
       const cachedToday = previous?.offers.filter(
         (offer) => offer.sourceName === collector.sourceName && offer.offerDate === today,
+      )
+      if (cachedToday?.length) collected.push(...cachedToday)
+    }
+  }
+
+  if (process.env.LOUNALEIDJA_PARTNER_FEED_URL?.trim()) {
+    try {
+      const partnerOffers = await collectLicensedPartnerFeed(now)
+      if (date.isWeekday && !partnerOffers.length) {
+        throw new Error('Litsentsitud partnerivoog ei sisaldanud tänaseid pakkumisi')
+      }
+      collected.push(...partnerOffers)
+      for (const source of sourceStatuses) {
+        if (!partnerOffers.some((offer) => partnerSourceId(offer) === source.id)) continue
+        source.status = 'active'
+        source.lastSuccessAt = now.toISOString()
+        source.message = 'Litsentsitud partnerivoog on ühendatud ja tänased pakkumised on kuupäevaga kinnitatud.'
+      }
+      console.info(`[partner-feed] ${partnerOffers.length} tänast pakkumist`)
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error)
+      errors.push({ sourceId: 'licensed-partner-feed', message })
+      console.error(`[partner-feed] ${message}`)
+      const cachedToday = previous?.offers.filter(
+        (offer) => partnerSourceId(offer) !== null && offer.offerDate === today,
       )
       if (cachedToday?.length) collected.push(...cachedToday)
     }
