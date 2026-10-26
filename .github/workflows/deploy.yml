@@ -1,0 +1,76 @@
+name: Uuenda andmeid ja avalda
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7,9,11 * * 1-5'
+      timezone: 'Europe/Tallinn'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Laadi lähtekood
+        uses: actions/checkout@v6
+
+      - name: Seadista pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Seadista Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Paigalda sõltuvused
+        run: pnpm install --frozen-lockfile
+
+      - name: Uuenda lõunapakkumisi
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: pnpm collect
+
+      - name: Kontrolli ja ehita
+        run: pnpm check
+
+      - name: Salvesta muutunud andmed
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          if git diff --quiet -- public/data/offers.json; then
+            echo "Andmed ei muutunud"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/data/offers.json
+            git commit -m "data: uuenda lõunapakkumisi"
+            git push
+          fi
+
+      - name: Seadista GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Paki veebileht
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Avalda GitHub Pagesis
+        id: deployment
+        uses: actions/deploy-pages@v4
