@@ -2,6 +2,12 @@
   "name": "lounaleidja",
   "private": true,
   "version": "0.1.0",
+  "description": "Eestikeelne lähipiirkonna lõunapakkumiste otsing kaardi, filtrite ja kontrollitud algallikatega.",
+  "homepage": "https://kasparveevali-cmd.github.io/lounaleidja/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kasparveevali-cmd/lounaleidja.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

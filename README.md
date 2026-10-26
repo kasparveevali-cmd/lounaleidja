@@ -2,6 +2,9 @@
 
 Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, kuupäevaga kinnitatud lõunapakkumisi. Rakendus on teadlikult konservatiivne: eilseid või kuupäevata pakkumisi tänaste tulemustena ei näidata ning igal pakkumisel on link algallikale.
 
+- Avalik rakendus: [kasparveevali-cmd.github.io/lounaleidja](https://kasparveevali-cmd.github.io/lounaleidja/)
+- Lähtekood: [github.com/kasparveevali-cmd/lounaleidja](https://github.com/kasparveevali-cmd/lounaleidja)
+
 ## Valmis funktsioonid
 
 - aadressiotsing Nominatimi ja OpenStreetMapi kaudu;
