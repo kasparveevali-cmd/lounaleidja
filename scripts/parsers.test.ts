@@ -1,9 +1,11 @@
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import {
   parseAmpsHtml,
   parseKristiineMarkdown,
   parseProtoHtml,
   parseRevalHtml,
+  parseUlemisteCityJson,
   parseVapianoHtml,
 } from './parsers'
 
@@ -110,5 +112,54 @@ describe('parseProtoHtml', () => {
     `, '26.10')
     expect(parsed.map((offer) => offer.price)).toEqual([3.5, 5.5, 1.85])
     expect(parsed[2].description).toBe('Ahjulõhe · Ahjukartulid')
+  })
+})
+
+describe('parseUlemisteCityJson', () => {
+  const fixture = JSON.parse(readFileSync(
+    new URL('./fixtures/ulemiste-city-daily.json', import.meta.url),
+    'utf8',
+  )) as unknown
+
+  it('normaliseerib ametliku voo kõik 11 asukohta ja hinnavormingud', () => {
+    const menus = parseUlemisteCityJson(fixture)
+    expect(menus).toHaveLength(11)
+    expect(menus.flatMap((menu) => menu.offers)).toHaveLength(11)
+    expect(menus.map((menu) => menu.restaurantId)).toEqual([
+      'ulemiste-aiko-bowl',
+      'ulemiste-fredo-opiku',
+      'ulemiste-fredo-lurich',
+      'ulemiste-gala-sushi',
+      'ulemiste-mona',
+      'ulemiste-plus-tervisemaja-1',
+      'ulemiste-plus-tervisemaja-2',
+      'ulemiste-freya-foodbar',
+      'ulemiste-nuface',
+      'ulemiste-nuudel',
+      'ulemiste-airo-cafe',
+    ])
+
+    expect(menus[0]).toMatchObject({
+      restaurantName: 'AIKO BOWL',
+      address: 'Lõõtsa 1a, Viktor Palmi maja esimene korrus, Ülemiste City, Lasnamäe, Tallinn',
+      latitude: 59.42254790910803,
+      longitude: 24.80275086878664,
+      sourceUrl: 'https://www.ulemistecity.ee/sook/lounasook-ulemiste/',
+    })
+    expect(menus[0].offers).toEqual([{
+      offerName: 'Taipärane kollane kanakarri (L, S)',
+      description: 'Hinnad: 6.90/8.50 €',
+      price: 6.9,
+    }])
+    expect(menus[6].offers).toEqual([{
+      offerName: 'SOE JA KÜLM BUFFET',
+      description: 'Hind: 1,69 €/100 g',
+      price: 1.69,
+    }])
+    expect(menus[8].offers[0]).toMatchObject({ price: 7, description: 'Hinnad: 7/9/11 €' })
+  })
+
+  it('lükkab vigase vastuse tagasi', () => {
+    expect(() => parseUlemisteCityJson({ success: false })).toThrow('JSON-vastus on vigane')
   })
 })

@@ -115,7 +115,7 @@ export default function App() {
         </a>
         <div className="nav-status">
           <span className="live-dot" />
-          {activeSources.length} töötav {activeSources.length === 1 ? 'allikas' : 'allikat'}
+          {activeSources.length} {activeSources.length === 1 ? 'töötav allikas' : 'töötavat allikat'}
         </div>
         <a className="about-link" href="#andmed">Andmetest <ArrowRight size={15} /></a>
       </nav>

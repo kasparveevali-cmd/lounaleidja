@@ -9,6 +9,7 @@ import {
   parsePrice,
   parseProtoHtml,
   parseRevalHtml,
+  parseUlemisteCityJson,
   parseVapianoHtml,
   type ParsedOffer,
 } from './parsers.ts'
@@ -17,6 +18,7 @@ import { parsePartnerFeed, partnerSourceId } from './partner-feed.ts'
 const outputPath = new URL('../public/data/offers.json', import.meta.url)
 const manualPath = new URL('../data/manual-offers.json', import.meta.url)
 const userAgent = 'Lounaleidja/0.2 (public-interest lunch index; contact via GitHub repository)'
+const robotsTextCache = new Map<string, Promise<string | null>>()
 
 const sourceStatuses: SourceStatus[] = [
   {
@@ -65,6 +67,14 @@ const sourceStatuses: SourceStatus[] = [
     url: 'https://www.prototehas.ee/menuu/',
     status: 'active',
     message: 'Kuupäevaga supi- ja lõunabufee pakkumised.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'ulemiste-city',
+    name: 'Ülemiste City ametlik päevamenüü',
+    url: 'https://www.ulemistecity.ee/paevapakkumised/',
+    status: 'active',
+    message: 'Ametlik kuupäevapõhine JSON-voog 11 Ülemiste City söögikoha menüüde ja asukohtadega.',
     lastSuccessAt: null,
   },
   {
@@ -171,13 +181,21 @@ async function request(url: string, accept = 'text/html,application/xhtml+xml') 
 async function assertRobotsAllowed(url: string) {
   const target = new URL(url)
   const robotsUrl = new URL('/robots.txt', target).toString()
-  const response = await fetch(robotsUrl, {
-    headers: { 'User-Agent': userAgent },
-    signal: AbortSignal.timeout(10_000),
-  })
-  if (response.status === 404) return
-  if (!response.ok) throw new Error(`robots.txt kontroll ebaõnnestus: HTTP ${response.status}`)
-  const parser = robotsParser(robotsUrl, await response.text())
+  let rules = robotsTextCache.get(robotsUrl)
+  if (!rules) {
+    rules = fetch(robotsUrl, {
+      headers: { 'User-Agent': userAgent },
+      signal: AbortSignal.timeout(10_000),
+    }).then(async (response) => {
+      if (response.status === 404) return null
+      if (!response.ok) throw new Error(`robots.txt kontroll ebaõnnestus: HTTP ${response.status}`)
+      return response.text()
+    })
+    robotsTextCache.set(robotsUrl, rules)
+  }
+  const text = await rules
+  if (text === null) return
+  const parser = robotsParser(robotsUrl, text)
   if (parser.isAllowed(url, userAgent) === false) {
     throw new Error('robots.txt ei luba selle lehe automatiseeritud lugemist')
   }
@@ -187,6 +205,27 @@ async function fetchSource(url: string, accept?: string) {
   await assertRobotsAllowed(url)
   await new Promise((resolve) => setTimeout(resolve, 1100))
   return (await request(url, accept)).text()
+}
+
+async function postFormJsonSource(url: string, body: URLSearchParams) {
+  await assertRobotsAllowed(url)
+  await new Promise((resolve) => setTimeout(resolve, 1100))
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'User-Agent': userAgent,
+      Accept: 'application/json',
+      'Accept-Language': 'et,en;q=0.8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    },
+    body,
+    signal: AbortSignal.timeout(20_000),
+  })
+  if (!response.ok) throw new Error(`${url} vastas HTTP ${response.status}`)
+  if (!response.headers.get('content-type')?.toLocaleLowerCase('en').includes('json')) {
+    throw new Error(`${url} ei tagastanud JSON-i`)
+  }
+  return response.json() as Promise<unknown>
 }
 
 async function collectLicensedPartnerFeed(now = new Date()) {
@@ -452,6 +491,41 @@ async function collectProto(now = new Date()) {
   return offers
 }
 
+async function collectUlemisteCity(now = new Date()) {
+  const date = tallinnDateParts(now)
+  const fetchedAt = now.toISOString()
+  const endpoint = 'https://www.ulemistecity.ee/wp-admin/admin-ajax.php'
+  const payload = await postFormJsonSource(endpoint, new URLSearchParams({
+    action: 'ld_get_content',
+    what: 'daily-offers',
+    time: String(Math.floor(now.getTime() / 1000)),
+    lang: 'et',
+  }))
+  const menus = parseUlemisteCityJson(payload)
+  const offers: LunchOffer[] = []
+
+  for (const menu of menus) {
+    const location: RestaurantLocation = {
+      id: menu.restaurantId,
+      name: menu.restaurantName,
+      address: menu.address,
+      latitude: menu.latitude,
+      longitude: menu.longitude,
+    }
+    offers.push(...offersForLocation(menu.offers, location, {
+      offerDate: date.iso,
+      fetchedAt,
+      sourceName: 'Ülemiste City ametlik päevamenüü',
+      sourceUrl: menu.sourceUrl,
+      lunchStartTime: menu.lunchStartTime,
+      lunchEndTime: menu.lunchEndTime,
+    }))
+  }
+
+  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
+  return offers
+}
+
 function isValidOffer(offer: LunchOffer): boolean {
   return Boolean(
     offer.restaurantId &&
@@ -503,6 +577,7 @@ const collectors: Array<{
   { id: 'vapiano', sourceName: 'Vapiano ametlik lõunamenüü', collect: collectVapiano },
   { id: 'amps', sourceName: 'AMPSi ametlik päevamenüü', collect: collectAmps },
   { id: 'proto', sourceName: 'PROTO ametlik lõunamenüü', collect: collectProto },
+  { id: 'ulemiste-city', sourceName: 'Ülemiste City ametlik päevamenüü', collect: collectUlemisteCity },
 ]
 
 async function main() {

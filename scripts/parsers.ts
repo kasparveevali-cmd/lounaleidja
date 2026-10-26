@@ -13,6 +13,17 @@ export interface ParsedMenu {
   offers: ParsedOffer[]
 }
 
+export interface ParsedLocationMenu extends ParsedMenu {
+  address: string
+  latitude: number
+  longitude: number
+}
+
+export interface ParsedUlemisteCityMenu extends ParsedLocationMenu {
+  restaurantId: string
+  sourceUrl: string
+}
+
 export function compact(value: string) {
   return value.replace(/\s+/g, ' ').trim()
 }
@@ -274,4 +285,131 @@ export function parseProtoHtml(html: string, dateShort: string): ParsedOffer[] {
     })
   }
   return offers
+}
+
+const ulemisteCityLocationIds = new Map<number, string>([
+  [11168, 'ulemiste-aiko-bowl'],
+  [124, 'ulemiste-fredo-opiku'],
+  [26534, 'ulemiste-fredo-lurich'],
+  [1890, 'ulemiste-gala-sushi'],
+  [12461, 'ulemiste-mona'],
+  [131, 'ulemiste-plus-tervisemaja-1'],
+  [22442, 'ulemiste-plus-tervisemaja-2'],
+  [17312, 'ulemiste-freya-foodbar'],
+  [128, 'ulemiste-nuface'],
+  [58, 'ulemiste-nuudel'],
+  [1252, 'ulemiste-airo-cafe'],
+])
+
+function record(value: unknown): Record<string, unknown> | null {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : null
+}
+
+function textFromHtml(value: unknown) {
+  if (typeof value !== 'string') return ''
+  return compact(load(value).root().text())
+}
+
+function normalizeUlemisteAddress(value: string) {
+  const address = compact(value).replace(/\s+,/g, ',').replace(/[.\s]+$/g, '')
+  return /Tallinn/i.test(address) ? address : `${address}, Tallinn`
+}
+
+function parseUlemistePrice(value: string): Pick<ParsedOffer, 'price' | 'description'> | null {
+  const priceText = compact(value)
+  const perHundredGrams = priceText.match(/100\s*g\s*\/\s*(\d+(?:[.,]\d{1,2})?)/i)
+    ?? priceText.match(/(\d+(?:[.,]\d{1,2})?)\s*€?\s*\/\s*100\s*g/i)
+  if (perHundredGrams) {
+    const price = Number(perHundredGrams[1].replace(',', '.'))
+    if (!Number.isFinite(price) || price <= 0) return null
+    return {
+      price,
+      description: `Hind: ${price.toLocaleString('et-EE', { minimumFractionDigits: 2 })} €/100 g`,
+    }
+  }
+
+  const prices = [...priceText.matchAll(/\d+(?:[.,]\d{1,2})?/g)]
+    .map((match) => Number(match[0].replace(',', '.')))
+    .filter((price) => Number.isFinite(price) && price > 0)
+  if (!prices.length) return null
+  return {
+    price: Math.min(...prices),
+    description: prices.length > 1
+      ? `Hinnad: ${priceText}${/€/.test(priceText) ? '' : ' €'}`
+      : null,
+  }
+}
+
+export function parseUlemisteCityJson(payload: unknown): ParsedUlemisteCityMenu[] {
+  const response = record(payload)
+  const data = record(response?.data)
+  const entries = data?.entries
+  if (response?.success !== true || !Array.isArray(entries)) {
+    throw new Error('Ülemiste City päevamenüü JSON-vastus on vigane')
+  }
+
+  return entries.map((rawEntry) => {
+    const entry = record(rawEntry)
+    const id = Number(entry?.ID)
+    const restaurantName = typeof entry?.title === 'string' ? compact(entry.title) : ''
+    const sourceUrl = typeof entry?.permalink === 'string' ? entry.permalink : ''
+    const rawAddress = typeof entry?.location === 'string' ? entry.location : ''
+    const coords = record(entry?.coords)
+    const latitude = Number(coords?.latitude)
+    const longitude = Number(coords?.longitude)
+    let sourceHost = ''
+    let sourceProtocol = ''
+    try {
+      const parsedSourceUrl = new URL(sourceUrl)
+      sourceHost = parsedSourceUrl.hostname
+      sourceProtocol = parsedSourceUrl.protocol
+    } catch {
+      // The validation below reports one consistent location-data error.
+    }
+    if (
+      !entry ||
+      !Number.isInteger(id) ||
+      !restaurantName ||
+      sourceProtocol !== 'https:' ||
+      !['ulemistecity.ee', 'www.ulemistecity.ee'].includes(sourceHost) ||
+      !rawAddress ||
+      !Number.isFinite(latitude) || latitude < 57 || latitude > 60 ||
+      !Number.isFinite(longitude) || longitude < 21 || longitude > 29
+    ) {
+      throw new Error(`Ülemiste City restorani asukohaandmed on vigased: ${restaurantName || id || 'tundmatu'}`)
+    }
+
+    const offers: ParsedOffer[] = []
+    const rawOffers = Array.isArray(entry.offers) ? entry.offers : []
+    for (const rawOffer of rawOffers) {
+      const offer = record(rawOffer)
+      const offerName = textFromHtml(offer?.name)
+      const offerType = typeof offer?.ftype === 'string' ? compact(offer.ftype) : ''
+      const priceText = typeof offer?.price === 'string' || typeof offer?.price === 'number'
+        ? String(offer.price)
+        : ''
+      const parsedPrice = parseUlemistePrice(priceText)
+      if (
+        !offerName ||
+        !parsedPrice ||
+        /Hommikusöök/i.test(offerType) ||
+        /^(?:\([^)]*\)\s*)+$/.test(offerName)
+      ) continue
+      offers.push({ offerName, ...parsedPrice })
+    }
+
+    return {
+      restaurantId: ulemisteCityLocationIds.get(id) ?? `ulemiste-${id}`,
+      restaurantName,
+      sourceUrl,
+      address: normalizeUlemisteAddress(rawAddress),
+      latitude,
+      longitude,
+      lunchStartTime: null,
+      lunchEndTime: null,
+      offers,
+    }
+  })
 }

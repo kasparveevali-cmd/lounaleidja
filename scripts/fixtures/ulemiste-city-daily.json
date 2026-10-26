@@ -1,0 +1,156 @@
+{
+  "success": true,
+  "data": {
+    "filters": {
+      "categories": {
+        "Komplekt": "Komplekt",
+        "Hommikusöök": "Hommikusöök",
+        "Praad": "Praad",
+        "Supp": "Supp"
+      }
+    },
+    "entries": [
+      {
+        "ID": 11168,
+        "title": "AIKO BOWL",
+        "permalink": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
+        "offers": [
+          {
+            "name": "Taipärane kollane kanakarri (<span title=\"Laktoosivaba\">L</span>, <span title=\"Sisaldab pähkleid\">S</span>)",
+            "price": "6.90/8.50",
+            "calories": "620/790",
+            "ftype": "Praad",
+            "fset": null
+          },
+          {
+            "name": " (<span title=\"Sisaldab pähkleid\">S</span>)",
+            "price": "9.50",
+            "calories": "",
+            "ftype": "Praad",
+            "fset": null
+          },
+          {
+            "name": " ",
+            "price": "3.30",
+            "calories": "",
+            "ftype": "Praad",
+            "fset": null
+          }
+        ],
+        "location": "Lõõtsa 1a, Viktor Palmi maja esimene korrus, Ülemiste City, Lasnamäe, Tallinn. ",
+        "opening_hours": [{ "name": "E–R", "hours": "08.00–15.00" }],
+        "categories": [],
+        "coords": { "latitude": "59.42254790910803", "longitude": "24.80275086878664" }
+      },
+      {
+        "ID": 124,
+        "title": "Fredo",
+        "permalink": "https://www.ulemistecity.ee/sook/fredo/",
+        "offers": [{ "name": "Hapukapsasupp sealihaga", "price": "4.50", "calories": "", "ftype": "Supp", "fset": null }],
+        "location": "Valukoja 8/1 , Öpiku maja",
+        "opening_hours": [{ "name": "E-R", "hours": "07:30-16:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.42013027453504", "longitude": "24.80490658836061" }
+      },
+      {
+        "ID": 26534,
+        "title": "Fredo Lurich",
+        "permalink": "https://www.ulemistecity.ee/sook/fredo-lurich/",
+        "offers": [{ "name": "Kanafilee Supreme", "price": "9.50", "calories": "", "ftype": "Praad", "fset": null }],
+        "location": "Valukoja 10",
+        "opening_hours": [{ "name": "E-R", "hours": "8.00–16.00" }],
+        "categories": [],
+        "coords": { "latitude": "59.41990751128435", "longitude": "24.80594202750855" }
+      },
+      {
+        "ID": 1890,
+        "title": "Gala Sushi",
+        "permalink": "https://www.ulemistecity.ee/sook/gala-sushi/",
+        "offers": [{ "name": "Bento: Miso lõhega + Tokio", "price": "7.90", "calories": "", "ftype": "Praad", "fset": null }],
+        "location": "Lõõtsa 4, Käisi maja",
+        "opening_hours": [{ "name": "E–R", "hours": "11:00–15:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.42215529141045", "longitude": "24.80187425899964" }
+      },
+      {
+        "ID": 12461,
+        "title": "Mona",
+        "permalink": "https://www.ulemistecity.ee/sook/mona/",
+        "offers": [
+          { "name": "Munapuder salatiga", "price": "6.5", "calories": "", "ftype": "Hommikusöök", "fset": null },
+          { "name": "PEAROOG: Kondita kanakints riisiga", "price": "11", "calories": "", "ftype": "Praad", "fset": null }
+        ],
+        "location": "Valukoja 10, Lurich",
+        "opening_hours": [{ "name": "E-R", "hours": "08:00-15:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.420097349109845", "longitude": "24.806007911639423" }
+      },
+      {
+        "ID": 131,
+        "title": "Plus Kohvik Tervisemaja 1",
+        "permalink": "https://www.ulemistecity.ee/sook/plus-kohvik/",
+        "offers": [{ "name": "LÕUNAKOMPLEKT: Hakklihakaste + supp + jook", "price": "7,30", "calories": "", "ftype": "Praad", "fset": "Komplekt" }],
+        "location": "Valukoja 7, Ülemiste Tervisemaja 1",
+        "opening_hours": [{ "name": "E-R", "hours": "10:00-16:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.42059576388718", "longitude": "24.806419476057446" }
+      },
+      {
+        "ID": 22442,
+        "title": "Plus Kohvik Tervisemaja 2",
+        "permalink": "https://www.ulemistecity.ee/sook/plus-kohvik-tervisemaja-2/",
+        "offers": [
+          { "name": "SOE JA KÜLM BUFFET", "price": "100g/1,69", "calories": "", "ftype": "Praad", "fset": null },
+          { "name": "Seapraad BBQ glasuuriga", "price": null, "calories": "", "ftype": "Praad", "fset": null }
+        ],
+        "location": "Sepapaja 12/1",
+        "opening_hours": [{ "name": "E-R", "hours": "08:30-15:30" }],
+        "categories": [],
+        "coords": { "latitude": "59.421293865103976", "longitude": "24.80665507916795" }
+      },
+      {
+        "ID": 17312,
+        "title": "Freya Foodbar",
+        "permalink": "https://www.ulemistecity.ee/sook/freya-foodbar/",
+        "offers": [{ "name": "KREEMINE PURAVIKU-ORSOTO", "price": "11.0", "calories": "", "ftype": "Praad", "fset": null }],
+        "location": "Sepise 7, Alma Tomingas",
+        "opening_hours": [{ "name": "E-R", "hours": "11:30-15:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.41894591613877", "longitude": "24.805253430688467" }
+      },
+      {
+        "ID": 128,
+        "title": "NuFace",
+        "permalink": "https://www.ulemistecity.ee/sook/njuface/",
+        "offers": [{ "name": "Pelmeenid", "price": "7/9/11", "calories": "", "ftype": "Praad", "fset": null }],
+        "location": "Sepise 8",
+        "opening_hours": [{ "name": "E-R", "hours": "11:00-16:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.41920031677463", "longitude": "24.805919409123227" }
+      },
+      {
+        "ID": 58,
+        "title": "Nuudel",
+        "permalink": "https://www.ulemistecity.ee/sook/nuudel/",
+        "offers": [
+          { "name": "Kana bambusega + jasmiiniriis", "price": "7.50", "calories": "", "ftype": "Praad", "fset": null },
+          { "name": "Kohapeal süües tuleb kõrvale värske salat", "price": null, "calories": "", "ftype": "Praad", "fset": null }
+        ],
+        "location": "Suur-Sõjamäe 10A, Kogerman, pargipoolne sissepääs",
+        "opening_hours": [{ "name": "E-R", "hours": "11:00-17:30" }],
+        "categories": [],
+        "coords": { "latitude": "59.422670653410954", "longitude": "24.800357678573597" }
+      },
+      {
+        "ID": 1252,
+        "title": "Airo Cafe",
+        "permalink": "https://www.ulemistecity.ee/sook/airo-cafe/",
+        "offers": [{ "name": "Ahjukanakoivad, karrikaste, kuskuss", "price": "6,00 / 8,50", "calories": "", "ftype": "Praad", "fset": null }],
+        "location": "Lennujaama tee 13",
+        "opening_hours": [{ "name": "E-R", "hours": "10:00-15:00" }],
+        "categories": [],
+        "coords": { "latitude": "59.41837608816857", "longitude": "24.807583312966933" }
+      }
+    ]
+  }
+}
