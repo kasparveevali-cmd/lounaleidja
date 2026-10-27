@@ -142,16 +142,16 @@ export function SearchPanel({
           className="radius-slider"
           type="range"
           min="0.5"
-          max="30"
+          max="10"
           step="0.5"
           value={radiusKm}
           onChange={(event) => onRadiusChange(Number(event.target.value))}
           aria-label="Otsinguraadius kilomeetrites"
-          style={{ '--progress': `${((radiusKm - 0.5) / 29.5) * 100}%` } as CSSProperties}
+          style={{ '--progress': `${((radiusKm - 0.5) / 9.5) * 100}%` } as CSSProperties}
         />
         <div className="range-labels" aria-hidden="true">
           <span>0,5 km</span>
-          <span>30 km</span>
+          <span>10 km</span>
         </div>
       </div>
     </section>

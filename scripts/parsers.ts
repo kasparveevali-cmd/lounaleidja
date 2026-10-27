@@ -287,6 +287,117 @@ export function parseProtoHtml(html: string, dateShort: string): ParsedOffer[] {
   return offers
 }
 
+function arterRangeContainsDate(value: string, dateIso: string) {
+  const match = compact(value).match(
+    /^(\d{1,2})\.(\d{1,2})\s*[–—-]\s*(\d{1,2})\.(\d{1,2})\.(\d{4})$/,
+  )
+  if (!match) return false
+
+  const startDay = Number(match[1])
+  const startMonth = Number(match[2])
+  const endDay = Number(match[3])
+  const endMonth = Number(match[4])
+  const endYear = Number(match[5])
+  const startYear = startMonth > endMonth ? endYear - 1 : endYear
+  const iso = (year: number, month: number, day: number) => (
+    `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+  )
+  return dateIso >= iso(startYear, startMonth, startDay)
+    && dateIso <= iso(endYear, endMonth, endDay)
+}
+
+function arterWeekdayLabel(dateIso: string) {
+  const weekday = new Date(`${dateIso}T12:00:00.000Z`).getUTCDay()
+  return ['', 'E', 'T', 'K', 'N', 'R', ''][weekday]
+}
+
+function parseArterPricedLine(value: string): ParsedOffer | null {
+  const line = compact(value)
+  const match = line.match(/^(.+?)\s+(\d+(?:[.,]\d{1,2})?)\s*€?\s*(\([^)]*\))?$/)
+  if (!match) return null
+  const price = parsePrice(match[2])
+  if (price === null) return null
+  const flags = match[3]
+    ? match[3].slice(1, -1).split(',').map(compact).filter(Boolean).join(', ')
+    : ''
+  return {
+    offerName: compact(match[1]),
+    description: flags ? `Märgised: ${flags}` : null,
+    price,
+  }
+}
+
+function parseVoivoiOffers(lines: string[], intro: string): ParsedOffer[] {
+  const priceFor = (label: string) => {
+    const match = intro.match(new RegExp(`${label}\\s*(\\d+(?:[.,]\\d{1,2})?)\\s*€`, 'i'))
+    return match ? parsePrice(match[1]) : null
+  }
+  const prices = {
+    main: priceFor('Praad'),
+    soup: priceFor('Supp'),
+    salad: priceFor('Salat'),
+    dessert: priceFor('Magus'),
+  }
+  if (Object.values(prices).some((price) => price === null)) return []
+
+  const soupIndex = lines.findIndex((line) => /supp|borš|seljanka|ramen/i.test(line))
+  if (soupIndex < 2 || soupIndex >= lines.length - 1) return []
+  const saladIndex = lines.findIndex((line, index) => (
+    index > 0
+    && index < soupIndex
+    && /\bsalat\b|poke\s*bowl|poke-kauss|caesar/i.test(line)
+  ))
+  const splitIndex = saladIndex === -1 ? soupIndex - 1 : saladIndex
+  const main = compact(lines.slice(0, splitIndex).join(' '))
+  const salad = compact(lines.slice(splitIndex, soupIndex).join(' '))
+  const soup = compact(lines[soupIndex])
+  const dessert = compact(lines.slice(soupIndex + 1).join(' '))
+  if (!main || !salad || !soup || !dessert) return []
+
+  return [
+    { offerName: main, description: 'Praad', price: prices.main! },
+    { offerName: salad, description: 'Salat', price: prices.salad! },
+    { offerName: soup, description: 'Supp', price: prices.soup! },
+    { offerName: dessert, description: 'Magus', price: prices.dessert! },
+  ]
+}
+
+export function parseArterHtml(html: string, dateIso: string): ParsedMenu[] {
+  const $ = load(html)
+  const section = $('section.daily-offers-section2').first()
+  const dateLabel = compact(section.find('.title-bdr h2').first().text())
+  const weekdayLabel = arterWeekdayLabel(dateIso)
+  if (!weekdayLabel || !arterRangeContainsDate(dateLabel, dateIso)) return []
+
+  const menus: ParsedMenu[] = []
+  section.find('.items').each((_, itemElement) => {
+    const item = $(itemElement)
+    const restaurantName = compact(item.find('h3').first().text())
+    if (!restaurantName) return
+    const dayRow = item.find('.daily-offers-s2-content-info .row.align-items-center')
+      .filter((__, rowElement) => compact($(rowElement).find('h4').first().text()) === weekdayLabel)
+      .first()
+    const paragraph = dayRow.find('.col-md-11 p').first().clone()
+    paragraph.find('br').replaceWith('\n')
+    const lines = paragraph.text().split('\n').map(compact).filter(Boolean)
+    if (!lines.length) return
+
+    const isVoivoi = /VÕIVÕI/i.test(restaurantName)
+    const offers = isVoivoi
+      ? parseVoivoiOffers(lines, compact(item.find('.entry-content').first().text()))
+      : lines.map(parseArterPricedLine).filter((offer): offer is ParsedOffer => offer !== null)
+    if (!offers.length) return
+
+    menus.push({
+      restaurantName,
+      lunchStartTime: isVoivoi ? '11:30' : '11:00',
+      lunchEndTime: '15:00',
+      offers,
+    })
+  })
+  return menus
+}
+
 const ulemisteCityLocationIds = new Map<number, string>([
   [11168, 'ulemiste-aiko-bowl'],
   [124, 'ulemiste-fredo-opiku'],

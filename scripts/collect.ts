@@ -5,6 +5,7 @@ import type { LunchOffer, OffersBundle, SourceStatus } from '../src/types.ts'
 import {
   compact,
   parseAmpsHtml,
+  parseArterHtml,
   parseKristiineMarkdown,
   parsePrice,
   parseProtoHtml,
@@ -67,6 +68,14 @@ const sourceStatuses: SourceStatus[] = [
     url: 'https://www.prototehas.ee/menuu/',
     status: 'active',
     message: 'Kuupäevaga supi- ja lõunabufee pakkumised.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'arter-quarter',
+    name: 'Arteri kvartali ametlik päevamenüü',
+    url: 'https://arter.ee/restoranid/paevapakkumised/',
+    status: 'active',
+    message: 'Ametlik kuupäevaga nädalamenüü Bistroo Arteri ja VÕIVÕI Tuli Resto Baari pakkumistega.',
     lastSuccessAt: null,
   },
   {
@@ -149,6 +158,23 @@ const ampsLocations: Record<string, RestaurantLocation> = {
   'Arena AMPS': { id: 'amps-arena', name: 'AMPS Arena', address: 'Jalgpalli 21, Tallinn', latitude: 59.4207948, longitude: 24.7322602 },
 }
 
+const arterLocations: Record<string, RestaurantLocation> = {
+  'Bistroo Arter': {
+    id: 'bistroo-arter',
+    name: 'Bistroo Arter',
+    address: 'Liivalaia 36, Tallinn',
+    latitude: 59.4296,
+    longitude: 24.758909,
+  },
+  'VÕIVÕI Tuli Resto Baar': {
+    id: 'voivoi-arter',
+    name: 'VõiVõi',
+    address: 'Liivalaia tn 36, 10132 Tallinn',
+    latitude: 59.42976,
+    longitude: 24.75934,
+  },
+}
+
 function tallinnDateParts(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Europe/Tallinn',
@@ -187,7 +213,7 @@ async function assertRobotsAllowed(url: string) {
       headers: { 'User-Agent': userAgent },
       signal: AbortSignal.timeout(10_000),
     }).then(async (response) => {
-      if (response.status === 404) return null
+      if (response.status >= 400 && response.status < 500 && response.status !== 429) return null
       if (!response.ok) throw new Error(`robots.txt kontroll ebaõnnestus: HTTP ${response.status}`)
       return response.text()
     })
@@ -491,6 +517,28 @@ async function collectProto(now = new Date()) {
   return offers
 }
 
+async function collectArter(now = new Date()) {
+  const sourceUrl = 'https://arter.ee/restoranid/paevapakkumised/'
+  const date = tallinnDateParts(now)
+  const parsedMenus = parseArterHtml(await fetchSource(sourceUrl), date.iso)
+  const fetchedAt = now.toISOString()
+  const offers: LunchOffer[] = []
+  for (const menu of parsedMenus) {
+    const location = arterLocations[menu.restaurantName]
+    if (!location) continue
+    offers.push(...offersForLocation(menu.offers, location, {
+      offerDate: date.iso,
+      fetchedAt,
+      sourceName: 'Arteri kvartali ametlik päevamenüü',
+      sourceUrl,
+      lunchStartTime: menu.lunchStartTime,
+      lunchEndTime: menu.lunchEndTime,
+    }))
+  }
+  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
+  return offers
+}
+
 async function collectUlemisteCity(now = new Date()) {
   const date = tallinnDateParts(now)
   const fetchedAt = now.toISOString()
@@ -577,6 +625,7 @@ const collectors: Array<{
   { id: 'vapiano', sourceName: 'Vapiano ametlik lõunamenüü', collect: collectVapiano },
   { id: 'amps', sourceName: 'AMPSi ametlik päevamenüü', collect: collectAmps },
   { id: 'proto', sourceName: 'PROTO ametlik lõunamenüü', collect: collectProto },
+  { id: 'arter-quarter', sourceName: 'Arteri kvartali ametlik päevamenüü', collect: collectArter },
   { id: 'ulemiste-city', sourceName: 'Ülemiste City ametlik päevamenüü', collect: collectUlemisteCity },
 ]
 

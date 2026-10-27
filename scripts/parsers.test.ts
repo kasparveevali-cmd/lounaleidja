@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import {
   parseAmpsHtml,
+  parseArterHtml,
   parseKristiineMarkdown,
   parseProtoHtml,
   parseRevalHtml,
@@ -112,6 +113,73 @@ describe('parseProtoHtml', () => {
     `, '26.10')
     expect(parsed.map((offer) => offer.price)).toEqual([3.5, 5.5, 1.85])
     expect(parsed[2].description).toBe('Ahjulõhe · Ahjukartulid')
+  })
+})
+
+describe('parseArterHtml', () => {
+  const html = `
+    <section class="daily-offers-section2">
+      <div class="title-bdr"><h2>26.10 — 01.11.2026</h2></div>
+      <div class="items">
+        <h3>Bistroo Arter</h3>
+        <div class="daily-offers-s2-content-info">
+          <div class="row align-items-center">
+            <div><h4><strong>E</strong></h4></div>
+            <div class="col-md-11"><p>Eilne praad 7,50</p></div>
+          </div>
+          <div class="row align-items-center">
+            <div><h4><strong>T</strong></h4></div>
+            <div class="col-md-11"><p>Gruusia veiselihahautis granaatõunaseemnetega 9,50 (G,L,P)<br>Kana-klimbisupp 4,90</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="items">
+        <h3>VÕIVÕI Tuli Resto Baar</h3>
+        <div class="daily-offers-s2-content-info entry-content">
+          <p>Omaperelõuna E–R 11.30–15 Praad 9,5 € / Supp 6 € / Salat 8 € / Magus 4 €</p>
+        </div>
+        <div class="daily-offers-s2-content-info">
+          <div class="row align-items-center">
+            <div><h4><strong>T</strong></h4></div>
+            <div class="col-md-11"><p>Kanakints punase veini kastmes, seened ja<br>kartulipüree<br>Niçoise salat Cajun lõhega<br>Kookosene kõrvitsasupp tšilliga<br>Küpsetatud õuna- ja muraka-crumble<br>vanillikastmega</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
+
+  it('valib jooksva nädala õige päeva mõlema söögikoha menüüst', () => {
+    const menus = parseArterHtml(html, '2026-10-27')
+    expect(menus).toHaveLength(2)
+    expect(menus[0]).toMatchObject({
+      restaurantName: 'Bistroo Arter',
+      lunchStartTime: '11:00',
+      lunchEndTime: '15:00',
+    })
+    expect(menus[0].offers).toEqual([
+      { offerName: 'Gruusia veiselihahautis granaatõunaseemnetega', description: 'Märgised: G, L, P', price: 9.5 },
+      { offerName: 'Kana-klimbisupp', description: null, price: 4.9 },
+    ])
+    expect(menus[1].offers).toEqual([
+      { offerName: 'Kanakints punase veini kastmes, seened ja kartulipüree', description: 'Praad', price: 9.5 },
+      { offerName: 'Niçoise salat Cajun lõhega', description: 'Salat', price: 8 },
+      { offerName: 'Kookosene kõrvitsasupp tšilliga', description: 'Supp', price: 6 },
+      { offerName: 'Küpsetatud õuna- ja muraka-crumble vanillikastmega', description: 'Magus', price: 4 },
+    ])
+  })
+
+  it('ei kasuta vale nädala menüüd', () => {
+    expect(parseArterHtml(html, '2026-11-03')).toEqual([])
+  })
+
+  it('ei pea päevaprae lisandit ekslikult salatipakkumiseks', () => {
+    const wrapped = html.replace(
+      'Kanakints punase veini kastmes, seened ja<br>kartulipüree<br>Niçoise salat Cajun lõhega',
+      'Meriahvena filee ja<br>soe tatrasalat<br>Kanasalat kurgi ja ubadega',
+    )
+    const voivoi = parseArterHtml(wrapped, '2026-10-27')[1]
+    expect(voivoi.offers[0].offerName).toBe('Meriahvena filee ja soe tatrasalat')
+    expect(voivoi.offers[1].offerName).toBe('Kanasalat kurgi ja ubadega')
   })
 })
 

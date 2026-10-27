@@ -9,7 +9,7 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 
 - aadressiotsing Nominatimi ja OpenStreetMapi kaudu;
 - brauseri geolokatsioon koos arusaadavate veateadetega;
-- 0,5–30 km otsinguraadius ja Haversine'i valemil põhinev kaugusarvutus;
+- 0,5–10 km otsinguraadius ja Haversine'i valemil põhinev kaugusarvutus;
 - nimekirja- ja kaardivaade koos kasutaja asukoha, markerite ning raadiuseringiga;
 - otsing restorani või toidu järgi, hinnavahemik ja kolm sortimisviisi;
 - ainult kinnitatud pakkumiste filter;
@@ -30,6 +30,7 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 | [Vapiano ametlik lõunamenüü](https://vapiano.ee/louna/) | töötab | Jooksva nädala nähtav menüü seotakse Foorumi, Solarise, Ülemiste ja Rocca al Mare restoraniga. |
 | [AMPSi ametlik päevamenüü](https://amps.ee/lounapakkumised/) | töötab | Kuupäevaga asukohapõhised pakkumised Järve ja Arena AMPSile. |
 | [PROTO ametlik lõunamenüü](https://www.prototehas.ee/menuu/) | töötab | Kuupäevaga supi suurused ja lõunabufee hind koos buffet' koostisega. |
+| [Arteri kvartali ametlik päevamenüü](https://arter.ee/restoranid/paevapakkumised/) | töötab | Jooksva nädala kuupäevaga pakkumised Bistroo Arterile ja VÕIVÕI Tuli Resto Baarile aadressil Liivalaia 36. |
 | [Ülemiste City ametlik päevamenüü](https://www.ulemistecity.ee/paevapakkumised/) | töötab | Avaliku lehe ametlik kuupäevapõhine JSON-voog sisaldab hindu, aadresse ja koordinaate 11 söögikohale: AIKO BOWL, Fredo, Fredo Lurich, Gala Sushi, Mona, kaks Plus Kohvikut, Freya Foodbar, NuFace, Nuudel ja Airo Cafe. |
 | [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine) | vajab kirjalikku luba | Teenus pakub partneritele andmete jagamist teistesse keskkondadesse, kuid kasutustingimused ei luba andmeid omal algatusel kopeerida. |
 | [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
@@ -72,7 +73,7 @@ Kõik kontrollid korraga:
 pnpm check
 ```
 
-Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO ja Ülemiste City menüüparserid.
+Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO, Arteri kvartali ja Ülemiste City menüüparserid.
 
 ## Automaatne uuendamine
 

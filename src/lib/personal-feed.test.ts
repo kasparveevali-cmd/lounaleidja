@@ -117,6 +117,7 @@ describe('mergeAggregatorFeed', () => {
     const aggregator = parseAggregatorFeed(
       rawFeed([
         rawOffer({ restaurantName: 'Mõnus resto' }),
+        rawOffer({ restaurantName: 'Mõnus resto', offerName: 'Kana ja riis (G,L,P)' }),
         rawOffer({ offerName: 'Kalapraad', price: 8.5 }),
       ]),
       today,

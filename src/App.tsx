@@ -254,8 +254,8 @@ export default function App() {
                   ? 'Suurenda otsinguraadiust või proovi leebemaid filtreid. Näitame ainult tänase kuupäevaga pakkumisi.'
                   : 'Täna ei ole meie lubatud allikates kuupäevaga kinnitatud pakkumisi.'}
               </p>
-              {location && radiusKm < 30 && (
-                <button type="button" onClick={() => setRadiusKm(Math.min(30, Math.max(5, radiusKm * 2)))}>
+              {location && radiusKm < 10 && (
+                <button type="button" onClick={() => setRadiusKm(Math.min(10, Math.max(5, radiusKm * 2)))}>
                   Suurenda raadiust <ArrowRight size={16} />
                 </button>
               )}

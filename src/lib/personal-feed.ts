@@ -189,11 +189,15 @@ function normalizeForKey(value: string): string {
     .trim()
 }
 
+function offerNameMatchKey(value: string): string {
+  return normalizeForKey(value.replace(/\s*\(\s*[glpv](?:\s*,\s*[glpv])*\s*\)\s*\.?$/i, ''))
+}
+
 function duplicateKey(offer: LunchOffer): string {
   return [
     restaurantMatchKey(offer.restaurantName),
     normalizeForKey(offer.address),
-    normalizeForKey(offer.offerName),
+    offerNameMatchKey(offer.offerName),
     offer.price.toFixed(2),
   ].join('|')
 }
