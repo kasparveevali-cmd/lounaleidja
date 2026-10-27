@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T16:20:40.269Z",
+  "generatedAt": "2026-10-27T16:26:40.500Z",
   "timezone": "Europe/Tallinn",
   "offers": [
     {
@@ -17,7 +17,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -35,7 +35,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -53,7 +53,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -71,7 +71,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -89,7 +89,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -107,7 +107,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -125,7 +125,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -143,7 +143,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -161,7 +161,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -179,7 +179,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -197,7 +197,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -215,7 +215,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -233,7 +233,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -251,7 +251,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -269,7 +269,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -287,7 +287,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -305,7 +305,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -323,7 +323,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -341,7 +341,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -359,7 +359,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -377,7 +377,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -395,7 +395,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -413,7 +413,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -431,7 +431,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -449,7 +449,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -467,7 +467,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -485,7 +485,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -503,7 +503,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -521,7 +521,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -539,7 +539,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -557,7 +557,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -575,7 +575,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -593,7 +593,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -611,7 +611,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -629,7 +629,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -647,7 +647,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -665,7 +665,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -683,7 +683,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -701,7 +701,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -719,7 +719,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -737,7 +737,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -755,7 +755,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -773,7 +773,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -791,7 +791,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -809,7 +809,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -827,7 +827,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -845,7 +845,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -863,7 +863,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -881,7 +881,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -899,7 +899,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -917,7 +917,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -935,7 +935,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -953,7 +953,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -971,7 +971,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -989,7 +989,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1007,7 +1007,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1025,7 +1025,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1043,7 +1043,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1061,7 +1061,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1079,7 +1079,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1097,7 +1097,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1115,7 +1115,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1133,7 +1133,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1151,7 +1151,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1169,7 +1169,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1187,7 +1187,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1205,7 +1205,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1223,7 +1223,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1241,7 +1241,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1259,7 +1259,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1277,7 +1277,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1295,7 +1295,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1313,7 +1313,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1331,7 +1331,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1349,7 +1349,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1367,7 +1367,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1385,7 +1385,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1403,7 +1403,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1421,7 +1421,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1439,7 +1439,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1457,7 +1457,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/nuudel/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1475,7 +1475,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1493,7 +1493,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1511,7 +1511,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1529,7 +1529,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1547,7 +1547,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1565,7 +1565,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1583,7 +1583,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1601,7 +1601,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1619,7 +1619,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik-tervisemaja-2/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1637,7 +1637,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik-tervisemaja-2/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1655,7 +1655,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1673,7 +1673,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1691,7 +1691,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1709,7 +1709,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1727,7 +1727,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1745,7 +1745,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1763,7 +1763,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1781,7 +1781,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1799,7 +1799,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1817,7 +1817,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1835,7 +1835,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1853,7 +1853,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1871,7 +1871,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1889,7 +1889,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1907,7 +1907,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1925,7 +1925,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1943,7 +1943,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1961,7 +1961,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1979,7 +1979,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -1997,7 +1997,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2015,7 +2015,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2033,7 +2033,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2051,7 +2051,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2069,7 +2069,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2087,7 +2087,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2105,7 +2105,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2123,7 +2123,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2141,7 +2141,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2159,7 +2159,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2177,7 +2177,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2195,7 +2195,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2213,7 +2213,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2231,7 +2231,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     },
     {
@@ -2249,7 +2249,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-10-27T16:20:40.269Z",
+      "fetchedAt": "2026-10-27T16:26:40.500Z",
       "verificationStatus": "verified"
     }
   ],
@@ -2260,7 +2260,7 @@
       "url": "https://hiiuresto.eu/menuu/",
       "status": "active",
       "message": "Kuupäevaga nädalamenüü ametlikult restoranilehelt.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "kristiine-lunch",
@@ -2268,7 +2268,7 @@
       "url": "https://www.kristiinekeskus.ee/lounapakkumised",
       "status": "active",
       "message": "Ametlik masinloetav voog viie söögikoha menüüdega; LIDO menüü kehtib neljas Tallinna LIDO-s.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "reval-cafe",
@@ -2284,7 +2284,7 @@
       "url": "https://vapiano.ee/louna/",
       "status": "active",
       "message": "Nädalapakkumised neljale Tallinna Vapiano restoranile.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "amps",
@@ -2292,7 +2292,7 @@
       "url": "https://amps.ee/lounapakkumised/",
       "status": "active",
       "message": "Kuupäevaga pakkumised Järve ja Arena AMPSi asukohtadele.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "proto",
@@ -2300,7 +2300,7 @@
       "url": "https://www.prototehas.ee/menuu/",
       "status": "active",
       "message": "Kuupäevaga supi- ja lõunabufee pakkumised.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "arter-quarter",
@@ -2308,7 +2308,7 @@
       "url": "https://arter.ee/restoranid/paevapakkumised/",
       "status": "active",
       "message": "Ametlik kuupäevaga nädalamenüü Bistroo Arteri ja VÕIVÕI Tuli Resto Baari pakkumistega.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "ulemiste-city",
@@ -2316,7 +2316,7 @@
       "url": "https://www.ulemistecity.ee/paevapakkumised/",
       "status": "active",
       "message": "Ametlik kuupäevapõhine JSON-voog 11 Ülemiste City söögikoha menüüde ja asukohtadega.",
-      "lastSuccessAt": "2026-10-27T16:20:40.269Z"
+      "lastSuccessAt": "2026-10-27T16:26:40.500Z"
     },
     {
       "id": "paevapakkumised",

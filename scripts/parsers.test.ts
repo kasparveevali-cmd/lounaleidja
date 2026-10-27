@@ -181,6 +181,16 @@ describe('parseArterHtml', () => {
     expect(voivoi.offers[0].offerName).toBe('Meriahvena filee ja soe tatrasalat')
     expect(voivoi.offers[1].offerName).toBe('Kanasalat kurgi ja ubadega')
   })
+
+  it('tunneb ära supi nime ka ilma sõnata „supp”', () => {
+    const tomKha = html.replace('Kookosene kõrvitsasupp tšilliga', 'Tom kha kanaga')
+    const voivoi = parseArterHtml(tomKha, '2026-10-27')[1]
+    expect(voivoi.offers[2]).toEqual({
+      offerName: 'Tom kha kanaga',
+      description: 'Supp',
+      price: 6,
+    })
+  })
 })
 
 describe('parseUlemisteCityJson', () => {

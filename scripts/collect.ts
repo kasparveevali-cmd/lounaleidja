@@ -521,6 +521,13 @@ async function collectArter(now = new Date()) {
   const sourceUrl = 'https://arter.ee/restoranid/paevapakkumised/'
   const date = tallinnDateParts(now)
   const parsedMenus = parseArterHtml(await fetchSource(sourceUrl), date.iso)
+  if (date.isWeekday) {
+    const parsedNames = new Set(parsedMenus.map((menu) => menu.restaurantName))
+    const missingRestaurants = Object.keys(arterLocations).filter((name) => !parsedNames.has(name))
+    if (missingRestaurants.length) {
+      throw new Error(`Tänase menüüta söögikohad: ${missingRestaurants.join(', ')}`)
+    }
+  }
   const fetchedAt = now.toISOString()
   const offers: LunchOffer[] = []
   for (const menu of parsedMenus) {
@@ -535,7 +542,6 @@ async function collectArter(now = new Date()) {
       lunchEndTime: menu.lunchEndTime,
     }))
   }
-  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
   return offers
 }
 

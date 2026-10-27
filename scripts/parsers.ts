@@ -340,16 +340,24 @@ function parseVoivoiOffers(lines: string[], intro: string): ParsedOffer[] {
   }
   if (Object.values(prices).some((price) => price === null)) return []
 
-  const soupIndex = lines.findIndex((line) => /supp|borš|seljanka|ramen/i.test(line))
-  if (soupIndex < 2 || soupIndex >= lines.length - 1) return []
-  const saladIndex = lines.findIndex((line, index) => (
-    index > 0
-    && index < soupIndex
-    && /\bsalat\b|poke\s*bowl|poke-kauss|caesar/i.test(line)
+  const namedSoupIndex = lines.findIndex((line, index) => (
+    index > 1
+    && /supp|borš|seljanka|ramen|tom\s*(?:kha|yum)|gazpacho|puljong|bisque|consomm[eé]|minestrone|harira|\bpho\b/i.test(line)
   ))
-  const splitIndex = saladIndex === -1 ? soupIndex - 1 : saladIndex
-  const main = compact(lines.slice(0, splitIndex).join(' '))
-  const salad = compact(lines.slice(splitIndex, soupIndex).join(' '))
+  const saladSearchEnd = namedSoupIndex === -1 ? lines.length - 2 : namedSoupIndex
+  let saladIndex = -1
+  lines.forEach((line, index) => {
+    if (index > 0 && index < saladSearchEnd && /salat\b|poke\s*bowl|poke-kauss|caesar/i.test(line)) {
+      saladIndex = index
+    }
+  })
+  if (saladIndex < 1) return []
+  // Arteri lehel on road järjekorras praad, salat, supp ja magus. Kui supi
+  // nimes pole liigisõna (nt „Tom kha”), algab see salatile järgnevalt realt.
+  const soupIndex = namedSoupIndex === -1 ? saladIndex + 1 : namedSoupIndex
+  if (soupIndex >= lines.length - 1) return []
+  const main = compact(lines.slice(0, saladIndex).join(' '))
+  const salad = compact(lines.slice(saladIndex, soupIndex).join(' '))
   const soup = compact(lines[soupIndex])
   const dessert = compact(lines.slice(soupIndex + 1).join(' '))
   if (!main || !salad || !soup || !dessert) return []
