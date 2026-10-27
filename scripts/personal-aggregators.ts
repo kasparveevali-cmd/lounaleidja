@@ -43,11 +43,11 @@ interface LocationCandidate {
 
 const providerDetails: Record<PersonalAggregator, { name: string; pageUrl: string }> = {
   paevapraad: {
-    name: 'Päevapraad.ee · isiklik voog',
+    name: 'Päevapraad.ee',
     pageUrl: 'https://www.paevapraad.ee/tallinn/',
   },
   paevapakkumised: {
-    name: 'Päevapakkumised.ee · isiklik voog',
+    name: 'Päevapakkumised.ee',
     pageUrl: 'https://www.xn--pevapakkumised-5hb.ee/tallinn',
   },
 }

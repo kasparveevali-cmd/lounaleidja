@@ -406,9 +406,9 @@ main {
   font-size: 10px;
 }
 
-.personal-feed-banner {
+.aggregator-feed-banner {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   margin-top: 14px;
@@ -418,17 +418,17 @@ main {
   background: rgba(251, 250, 247, 0.72);
 }
 
-.personal-feed-banner.active {
+.aggregator-feed-banner.active {
   border-color: rgba(77, 139, 104, 0.35);
   background: rgba(237, 244, 239, 0.88);
 }
 
-.personal-feed-banner.invalid {
+.aggregator-feed-banner.error {
   border-color: rgba(152, 80, 62, 0.3);
   background: rgba(246, 233, 229, 0.74);
 }
 
-.personal-feed-icon {
+.aggregator-feed-icon {
   width: 34px;
   height: 34px;
   display: grid;
@@ -438,61 +438,25 @@ main {
   background: var(--sage-light);
 }
 
-.personal-feed-copy {
+.aggregator-feed-copy {
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.personal-feed-copy strong {
+.aggregator-feed-copy strong {
   font-size: 12px;
 }
 
-.personal-feed-copy > span,
-.personal-feed-copy small {
+.aggregator-feed-copy > span,
+.aggregator-feed-copy small {
   color: var(--muted);
   font-size: 10px;
   line-height: 1.4;
 }
 
-.personal-feed-copy .personal-feed-error {
-  color: #8a4939;
-}
-
-.personal-feed-copy .personal-feed-message {
-  color: #3e6d53;
-}
-
-.personal-feed-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-}
-
-.personal-feed-actions button {
-  min-height: 34px;
-  padding: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  color: #4e5750;
-  background: rgba(255, 255, 255, 0.82);
-  font-size: 10px;
-  font-weight: 680;
-  cursor: pointer;
-}
-
-.personal-feed-actions button:hover {
-  border-color: #9caaa2;
-  background: #fff;
-}
-
-.personal-feed-actions button.danger {
+.aggregator-feed-copy .aggregator-feed-error {
   color: #8a4939;
 }
 
@@ -1208,16 +1172,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .personal-feed-banner {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .personal-feed-actions {
-    grid-column: 2;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
   .site-footer {
     grid-template-columns: 1fr 1fr;
   }
@@ -1275,17 +1229,9 @@ main {
     padding: 70px 0 85px;
   }
 
-  .personal-feed-banner {
+  .aggregator-feed-banner {
     align-items: start;
     padding: 12px;
-  }
-
-  .personal-feed-actions {
-    grid-column: 1 / -1;
-  }
-
-  .personal-feed-actions button {
-    flex: 1 1 auto;
   }
 
   .results-heading {

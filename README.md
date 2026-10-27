@@ -14,7 +14,7 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 - otsing restorani või toidu järgi, hinnavahemik ja kolm sortimisviisi;
 - ainult kinnitatud pakkumiste filter;
 - brauseri `localStorage`-is hoitavad lemmikud;
-- brauserisse jääv isiklik andmevoog koos JSON-impordi ja kohaliku Chrome'i laienduse toega;
+- seadmeteülene koondallikate andmevoog ilma brauserilaienduseta;
 - algallika ja Google Mapsi teekonnajuhiste lingid;
 - laadimis-, vea- ja tühja oleku vaated;
 - mobiilivaade ja klaviatuuriga kasutatav põhifunktsionaalsus;
@@ -34,18 +34,17 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 | [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine) | vajab kirjalikku luba | Teenus pakub partneritele andmete jagamist teistesse keskkondadesse, kuid kasutustingimused ei luba andmeid omal algatusel kopeerida. |
 | [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
 
-Agregaatorite sisu ei kopeerita avalikku andmefaili enne selgesõnalise loa saamist. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Litsentsitud JSON-voo adapter, täpne skeem ja GitHubi secret'ite seadistus on kirjeldatud failis [`docs/litsentsitud-partnerivoog.md`](docs/litsentsitud-partnerivoog.md). Uusi allikaid lisatakse ametlike restoranilehtede adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
+Koondallikate sisu ei kirjutata repos hallatavasse `public/data/offers.json` faili. GitHub Actions loob selle eraldi failina `public/data/aggregator-offers.json` ainult Pagesi ehituse ajaks; fail on `.gitignore`-is ja seda ei commit'ita. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Litsentsitud JSON-voo adapter, täpne skeem ja GitHubi secret'ite seadistus on kirjeldatud failis [`docs/litsentsitud-partnerivoog.md`](docs/litsentsitud-partnerivoog.md). Uusi ametlikke allikaid lisatakse adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
 
-## Isiklikud koondallikad
+## Koondallikad
 
-Päevapraad.ee ja Päevapakkumised.ee jaoks on eraldi isiklik režiim. Selle andmeid ei kirjutata `public/data/offers.json` faili, GitHubi reposse ega Pagesi buildi: need jäävad kasutaja brauseri `localStorage`-isse ning rakendus märgistab need isikliku voona.
+Päevapraad.ee ja Päevapakkumised.ee andmed kogutakse GitHub Actionsis enne veebilehe ehitamist. Nii saab sama päeva pakkumisi kasutada kõigis seadmetes ilma brauserilaienduseta. Väljund lisatakse Pagesi artefakti, kuid jäetakse Git-ajaloost välja.
 
-- `personal-extension/` sisaldab Manifest V3 Chrome'i laiendust, mis loeb ainult kahe teenuse Tallinna koondlehte. Automaatne päring toimub kõige rohkem kord tunnis ja käsitsi uuendamisel kehtib viieminutiline kaitsevahemik.
-- `pnpm collect:personal` loob sama päeva imporditava faili `personal-data/offers.json`; kaust on `.gitignore`-is.
-- Mõlemas variandis kontrollitakse lehel olevat kuupäeva, hindu, allika hosti ja Eesti koordinaate. Päevapraad.ee kirje kuvatakse kaardil ainult siis, kui asukoht saab üheselt sobitatud Päevapakkumised.ee või ametliku voo asukohaga.
-- Laienduse paigaldusjuhis on failis [`personal-extension/README.md`](personal-extension/README.md).
+- `pnpm collect:aggregators` loob Pagesi jaoks faili `public/data/aggregator-offers.json`.
+- Koguja kontrollib lehel olevat kuupäeva, hindu, allika hosti ja Eesti koordinaate. Päevapraad.ee kirje kuvatakse kaardil ainult siis, kui asukoht saab üheselt sobitatud Päevapakkumised.ee või ametliku voo asukohaga.
+- Kui üks koondallikas ajutiselt ebaõnnestub, avaldatakse teise allika edukalt kogutud pakkumised koos allikapõhise veateatega.
 
-Isiklik režiim ei muuda algallikate kasutustingimusi ega anna sisu avaliku taasavaldamise õigust. Kasutaja vastutab selle eest, et tema kasutus oleks tingimustega kooskõlas.
+Tehniline lahendus ei muuda algallikate kasutustingimusi ega anna sisu taasavaldamise õigust. Saidi haldaja vastutab selle eest, et kasutus oleks tingimustega kooskõlas.
 
 ## Kohalik käivitamine
 
@@ -58,12 +57,6 @@ pnpm dev
 ```
 
 Vite kuvab terminalis kohaliku aadressi. Andmefail tekib asukohta `public/data/offers.json`.
-
-Isikliku JSON-voo loomiseks:
-
-```bash
-pnpm collect:personal
-```
 
 ## Kontrollid
 
@@ -93,8 +86,9 @@ Töövoog:
 4. normaliseerib andmed, valideerib väljad ja eemaldab duplikaadid;
 5. ühe allika vea korral jätkab teistega ning säilitab sama päeva varasema vahemälu;
 6. loeb seadistuse olemasolul litsentsitud partnerivoo ning aktiveerib ainult selles tegelikult töötava agregaatori;
-7. käivitab lindi, testid ja production-buildi;
-8. commit'ib muutunud andmefaili ning avaldab sama buildi GitHub Pagesis.
+7. loob eraldi Git-ajalukku mitte lisatava koondallikate faili Pagesi artefakti jaoks;
+8. käivitab lindi, testid ja production-buildi;
+9. commit'ib ainult muutunud ametliku andmefaili ning avaldab sama buildi GitHub Pagesis.
 
 Veateated jäävad nii Actionsi logisse kui ka andmefaili `errors` massiivi. Avalikus vaates näidatakse ainult `offerDate` väärtusega tänaseid pakkumisi.
 

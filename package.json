@@ -16,6 +16,7 @@
     "test": "vitest run",
     "collect": "tsx scripts/collect.ts",
     "collect:personal": "node --import tsx scripts/collect-personal.ts",
+    "collect:aggregators": "node --import tsx scripts/collect-personal.ts --output public/data/aggregator-offers.json",
     "check": "pnpm lint && pnpm test && pnpm build"
   },
   "dependencies": {

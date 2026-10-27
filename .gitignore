@@ -2,6 +2,7 @@ node_modules
 dist
 coverage
 personal-data
+public/data/aggregator-offers.json
 .DS_Store
 *.log
 .env*

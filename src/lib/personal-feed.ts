@@ -1,16 +1,12 @@
 import type { LunchOffer, OffersBundle, SourceStatus } from '../types'
 
-export const PERSONAL_FEED_STORAGE_KEY = 'lounaleidja-personal-feed-v1'
-export const PERSONAL_FEED_UPDATED_EVENT = 'lounaleidja:personal-feed-updated'
-export const PERSONAL_FEED_REFRESH_REQUEST_EVENT = 'lounaleidja:personal-feed-refresh-request'
-
 const maximumJsonLength = 5 * 1024 * 1024
 const maximumOffers = 5_000
 
-type PersonalProvider = 'paevapraad' | 'paevapakkumised'
+type AggregatorProvider = 'paevapraad' | 'paevapakkumised'
 
 interface ProviderDetails {
-  id: PersonalProvider
+  id: AggregatorProvider
   name: string
   url: string
 }
@@ -18,27 +14,27 @@ interface ProviderDetails {
 const providersByHost: Record<string, ProviderDetails> = {
   'paevapraad.ee': {
     id: 'paevapraad',
-    name: 'Päevapraad.ee · isiklik voog',
+    name: 'Päevapraad.ee',
     url: 'https://www.paevapraad.ee/',
   },
   'www.paevapraad.ee': {
     id: 'paevapraad',
-    name: 'Päevapraad.ee · isiklik voog',
+    name: 'Päevapraad.ee',
     url: 'https://www.paevapraad.ee/',
   },
   'xn--pevapakkumised-5hb.ee': {
     id: 'paevapakkumised',
-    name: 'Päevapakkumised.ee · isiklik voog',
+    name: 'Päevapakkumised.ee',
     url: 'https://www.xn--pevapakkumised-5hb.ee/',
   },
   'www.xn--pevapakkumised-5hb.ee': {
     id: 'paevapakkumised',
-    name: 'Päevapakkumised.ee · isiklik voog',
+    name: 'Päevapakkumised.ee',
     url: 'https://www.xn--pevapakkumised-5hb.ee/',
   },
 }
 
-export interface PersonalFeed {
+export interface AggregatorFeed {
   schemaVersion: 1
   generatedAt: string
   timezone: 'Europe/Tallinn'
@@ -206,13 +202,13 @@ function restaurantLocationKey(offer: LunchOffer): string {
   return [restaurantMatchKey(offer.restaurantName), normalizeForKey(offer.address)].join('|')
 }
 
-export function parsePersonalFeed(value: unknown, expectedDate: string): PersonalFeed {
-  const feed = object(value, 'Isiklik voog')
-  if (feed.schemaVersion !== 1) throw new Error('Isikliku voo schemaVersion peab olema 1')
-  if (feed.timezone !== 'Europe/Tallinn') throw new Error('Isikliku voo ajavöönd peab olema Europe/Tallinn')
+export function parseAggregatorFeed(value: unknown, expectedDate: string): AggregatorFeed {
+  const feed = object(value, 'Koondvoog')
+  if (feed.schemaVersion !== 1) throw new Error('Koondvoo schemaVersion peab olema 1')
+  if (feed.timezone !== 'Europe/Tallinn') throw new Error('Koondvoo ajavöönd peab olema Europe/Tallinn')
   const generatedAt = timestamp(feed.generatedAt, 'generatedAt')
-  if (!Array.isArray(feed.offers)) throw new Error('Isikliku voo offers peab olema massiiv')
-  if (feed.offers.length > maximumOffers) throw new Error(`Isiklikus voos võib olla kuni ${maximumOffers} pakkumist`)
+  if (!Array.isArray(feed.offers)) throw new Error('Koondvoo offers peab olema massiiv')
+  if (feed.offers.length > maximumOffers) throw new Error(`Koondvoos võib olla kuni ${maximumOffers} pakkumist`)
 
   const offersByKey = new Map<string, LunchOffer>()
   for (const [index, value] of feed.offers.entries()) {
@@ -228,19 +224,19 @@ export function parsePersonalFeed(value: unknown, expectedDate: string): Persona
   }
 }
 
-export function parsePersonalFeedJson(raw: string, expectedDate: string): PersonalFeed {
-  if (raw.length > maximumJsonLength) throw new Error('Isikliku voo JSON võib olla kuni 5 MB')
+export function parseAggregatorFeedJson(raw: string, expectedDate: string): AggregatorFeed {
+  if (raw.length > maximumJsonLength) throw new Error('Koondvoo JSON võib olla kuni 5 MB')
   let value: unknown
   try {
     value = JSON.parse(raw)
   } catch {
     throw new Error('Fail ei sisalda korrektset JSON-i')
   }
-  return parsePersonalFeed(value, expectedDate)
+  return parseAggregatorFeed(value, expectedDate)
 }
 
-function personalSourceStatuses(feed: PersonalFeed): SourceStatus[] {
-  const counts = new Map<PersonalProvider, number>()
+function aggregatorSourceStatuses(feed: AggregatorFeed): SourceStatus[] {
+  const counts = new Map<AggregatorProvider, number>()
   for (const offer of feed.offers) {
     const provider = providersByHost[new URL(offer.sourceUrl).hostname]
     counts.set(provider.id, (counts.get(provider.id) ?? 0) + 1)
@@ -252,14 +248,14 @@ function personalSourceStatuses(feed: PersonalFeed): SourceStatus[] {
       name: provider.name,
       url: provider.url,
       status: 'active',
-      message: `${count} tänast pakkumist on salvestatud ainult sellesse brauserisse.`,
+      message: `${count} tänast pakkumist keskse andmevoo kaudu.`,
       lastSuccessAt: feed.generatedAt,
     }
   })
 }
 
-export function mergePersonalFeed(official: OffersBundle, personal: PersonalFeed | null): OffersBundle {
-  if (!personal) return official
+export function mergeAggregatorFeed(official: OffersBundle, aggregator: AggregatorFeed | null): OffersBundle {
+  if (!aggregator) return official
 
   const offersByKey = new Map<string, LunchOffer>()
   const officialRestaurantIds = new Map<string, string>()
@@ -269,7 +265,7 @@ export function mergePersonalFeed(official: OffersBundle, personal: PersonalFeed
       officialRestaurantIds.set(restaurantLocationKey(offer), offer.restaurantId)
     }
   }
-  for (const offer of personal.offers) {
+  for (const offer of aggregator.offers) {
     const key = duplicateKey(offer)
     if (!offersByKey.has(key)) {
       const officialRestaurantId = officialRestaurantIds.get(restaurantLocationKey(offer))
@@ -278,7 +274,7 @@ export function mergePersonalFeed(official: OffersBundle, personal: PersonalFeed
   }
 
   const sourcesById = new Map(official.sources.map((source) => [source.id, source]))
-  for (const source of personalSourceStatuses(personal)) sourcesById.set(source.id, source)
+  for (const source of aggregatorSourceStatuses(aggregator)) sourcesById.set(source.id, source)
 
   return {
     ...official,

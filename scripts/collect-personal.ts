@@ -8,11 +8,13 @@ import {
   parsePaevapakkumisedHtml,
   parsePaevapraadHtml,
   tallinnDate,
+  type ParsedPersonalPage,
+  type PersonalAggregator,
 } from './personal-aggregators.ts'
 
 const defaultOutputPath = fileURLToPath(new URL('../personal-data/offers.json', import.meta.url))
 const officialOffersPath = new URL('../public/data/offers.json', import.meta.url)
-const userAgent = 'Lounaleidja personal collector/1.0 (local browser data)'
+const userAgent = 'Lounaleidja aggregator collector/1.0 (daily lunch index)'
 const targetPages = {
   paevapakkumised: 'https://www.xn--pevapakkumised-5hb.ee/tallinn',
   paevapraad: 'https://www.paevapraad.ee/tallinn/',
@@ -81,18 +83,48 @@ async function fetchHtml(url: (typeof targetPages)[keyof typeof targetPages]) {
   return html
 }
 
+function unavailablePage(provider: PersonalAggregator): ParsedPersonalPage {
+  return {
+    provider,
+    dateLabel: '',
+    restaurantCount: 0,
+    restaurants: [],
+    skippedOffers: 0,
+  }
+}
+
+function errorMessage(error: unknown) {
+  const message = error instanceof Error ? error.message : String(error)
+  return message.replace(/\s+/g, ' ').trim().slice(0, 500) || 'Tundmatu kogumisviga'
+}
+
 async function main() {
   const outputPath = outputPathFromArguments(process.argv.slice(2))
   const fetchedAt = new Date().toISOString()
   const offerDate = tallinnDate()
-  const [paevapakkumisedHtml, paevapraadHtml, officialJson] = await Promise.all([
-    fetchHtml(targetPages.paevapakkumised),
-    fetchHtml(targetPages.paevapraad),
-    readFile(officialOffersPath, 'utf8'),
-  ])
+  const officialJson = await readFile(officialOffersPath, 'utf8')
   const official = JSON.parse(officialJson) as OffersBundle
-  const paevapakkumised = parsePaevapakkumisedHtml(paevapakkumisedHtml, offerDate)
-  const paevapraad = parsePaevapraadHtml(paevapraadHtml, offerDate)
+  const [paevapakkumisedResult, paevapraadResult] = await Promise.allSettled([
+    fetchHtml(targetPages.paevapakkumised).then((html) => (
+      parsePaevapakkumisedHtml(html, offerDate)
+    )),
+    fetchHtml(targetPages.paevapraad).then((html) => (
+      parsePaevapraadHtml(html, offerDate)
+    )),
+  ])
+  const failures = new Map<PersonalAggregator, string>()
+  const paevapakkumised = paevapakkumisedResult.status === 'fulfilled'
+    ? paevapakkumisedResult.value
+    : unavailablePage('paevapakkumised')
+  const paevapraad = paevapraadResult.status === 'fulfilled'
+    ? paevapraadResult.value
+    : unavailablePage('paevapraad')
+  if (paevapakkumisedResult.status === 'rejected') {
+    failures.set('paevapakkumised', errorMessage(paevapakkumisedResult.reason))
+  }
+  if (paevapraadResult.status === 'rejected') {
+    failures.set('paevapraad', errorMessage(paevapraadResult.reason))
+  }
   const bundle = buildPersonalOffersBundle({
     paevapakkumised,
     paevapraad,
@@ -100,6 +132,14 @@ async function main() {
     offerDate,
     fetchedAt,
   })
+  for (const source of bundle.sources) {
+    const failure = failures.get(source.id as PersonalAggregator)
+    if (!failure) continue
+    source.status = 'unavailable'
+    source.message = `Kogumine ebaõnnestus: ${failure}`
+    source.lastSuccessAt = null
+    bundle.errors.push({ sourceId: source.id, message: failure })
+  }
 
   await mkdir(dirname(outputPath), { recursive: true })
   await writeFile(outputPath, `${JSON.stringify(bundle, null, 2)}\n`, 'utf8')

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { LunchOffer, OffersBundle } from '../types'
-import { mergePersonalFeed, parsePersonalFeed, parsePersonalFeedJson } from './personal-feed'
+import { mergeAggregatorFeed, parseAggregatorFeed, parseAggregatorFeedJson } from './personal-feed'
 
 const today = '2026-10-26'
 
@@ -35,9 +35,9 @@ function rawFeed(offers: unknown[]) {
   }
 }
 
-describe('parsePersonalFeed', () => {
+describe('parseAggregatorFeed', () => {
   it('lubab ainult tänased pakkumised ja määrab allika URL-i järgi', () => {
-    const result = parsePersonalFeed(
+    const result = parseAggregatorFeed(
       rawFeed([
         rawOffer(),
         rawOffer({ offerDate: '2026-10-25', offerName: 'Eilne roog' }),
@@ -48,30 +48,30 @@ describe('parsePersonalFeed', () => {
     expect(result.offers).toHaveLength(1)
     expect(result.offers[0]).toMatchObject({
       restaurantId: 'personal-monus-tartu-mnt-1-tallinn',
-      sourceName: 'Päevapraad.ee · isiklik voog',
+      sourceName: 'Päevapraad.ee',
       offerDate: today,
     })
     expect(result.generatedAt).toBe('2026-10-26T06:05:00.000Z')
   })
 
   it('keeldub võõrast hostist ja vigastest koordinaatidest', () => {
-    expect(() => parsePersonalFeed(rawFeed([rawOffer({ sourceUrl: 'https://example.com/menu' })]), today))
+    expect(() => parseAggregatorFeed(rawFeed([rawOffer({ sourceUrl: 'https://example.com/menu' })]), today))
       .toThrow(/Päevapraad\.ee või Päevapakkumised\.ee/)
-    expect(() => parsePersonalFeed(rawFeed([rawOffer({ latitude: 0 })]), today))
+    expect(() => parseAggregatorFeed(rawFeed([rawOffer({ latitude: 0 })]), today))
       .toThrow(/Eesti piires/)
   })
 
   it('annab vigase JSON-i kohta arusaadava vea', () => {
-    expect(() => parsePersonalFeedJson('{katki', today)).toThrow('korrektset JSON-i')
+    expect(() => parseAggregatorFeedJson('{katki', today)).toThrow('korrektset JSON-i')
   })
 
   it('lubab allikas selgelt märgitud tasuta pakkumise', () => {
-    const result = parsePersonalFeed(rawFeed([rawOffer({ price: 0, offerName: 'Tasuta vesi' })]), today)
+    const result = parseAggregatorFeed(rawFeed([rawOffer({ price: 0, offerName: 'Tasuta vesi' })]), today)
     expect(result.offers[0].price).toBe(0)
   })
 
   it('annab kahe koondallika samale söögikohale ühise tunnuse', () => {
-    const result = parsePersonalFeed(
+    const result = parseAggregatorFeed(
       rawFeed([
         rawOffer(),
         rawOffer({
@@ -90,8 +90,8 @@ describe('parsePersonalFeed', () => {
   })
 })
 
-describe('mergePersonalFeed', () => {
-  it('eelistab kattuva pakkumise puhul ametlikku kirjet ja aktiveerib isikliku allika', () => {
+describe('mergeAggregatorFeed', () => {
+  it('eelistab kattuva pakkumise puhul ametlikku kirjet ja aktiveerib koondallika', () => {
     const officialOffer: LunchOffer = {
       ...rawOffer(),
       restaurantId: 'official-monus',
@@ -114,7 +114,7 @@ describe('mergePersonalFeed', () => {
       }],
       errors: [],
     }
-    const personal = parsePersonalFeed(
+    const aggregator = parseAggregatorFeed(
       rawFeed([
         rawOffer({ restaurantName: 'Mõnus resto' }),
         rawOffer({ offerName: 'Kalapraad', price: 8.5 }),
@@ -122,7 +122,7 @@ describe('mergePersonalFeed', () => {
       today,
     )
 
-    const result = mergePersonalFeed(official, personal)
+    const result = mergeAggregatorFeed(official, aggregator)
 
     expect(result.offers).toHaveLength(2)
     expect(result.offers[0]).toBe(officialOffer)
@@ -131,7 +131,8 @@ describe('mergePersonalFeed', () => {
       expect.objectContaining({
         id: 'paevapraad',
         status: 'active',
-        name: 'Päevapraad.ee · isiklik voog',
+        name: 'Päevapraad.ee',
+        message: '2 tänast pakkumist keskse andmevoo kaudu.',
       }),
     ])
   })
