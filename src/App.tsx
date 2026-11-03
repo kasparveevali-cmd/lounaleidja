@@ -193,7 +193,7 @@ export default function App() {
           <div className="aggregator-feed-copy">
             <strong>Keskne koondvoog</strong>
             <span aria-live="polite">
-              {aggregatorStatus === 'loading' && 'Laadin Päevapraad.ee ja Päevapakkumised.ee tänaseid pakkumisi…'}
+              {aggregatorStatus === 'loading' && 'Laadin tänaseid koondpakkumisi…'}
               {aggregatorStatus === 'active' && aggregatorFeed
                 && `${aggregatorFeed.offers.length} tänast pakkumist · ${aggregatorSourceCount} ${aggregatorSourceCount === 1 ? 'koondallikas' : 'koondallikat'} · uuendatud ${aggregatorUpdatedAt}`}
               {aggregatorStatus === 'empty' && 'Koondvoog laaditi, kuid tänase kuupäevaga pakkumisi veel pole.'}
