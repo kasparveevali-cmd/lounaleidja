@@ -1,6 +1,7 @@
 import {
   AlertCircle,
   ArrowRight,
+  ArrowUpRight,
   CalendarDays,
   CheckCircle2,
   Database,
@@ -187,12 +188,11 @@ export default function App() {
         <section
           className={`aggregator-feed-banner ${aggregatorStatus}`}
           aria-label="Keskse koondvoo olek"
-          aria-live="polite"
         >
           <span className="aggregator-feed-icon"><Database size={18} /></span>
           <div className="aggregator-feed-copy">
             <strong>Keskne koondvoog</strong>
-            <span>
+            <span aria-live="polite">
               {aggregatorStatus === 'loading' && 'Laadin Päevapraad.ee ja Päevapakkumised.ee tänaseid pakkumisi…'}
               {aggregatorStatus === 'active' && aggregatorFeed
                 && `${aggregatorFeed.offers.length} tänast pakkumist · ${aggregatorSourceCount} ${aggregatorSourceCount === 1 ? 'koondallikas' : 'koondallikat'} · uuendatud ${aggregatorUpdatedAt}`}
@@ -200,6 +200,19 @@ export default function App() {
             </span>
             {aggregatorError && <small className="aggregator-feed-error" role="alert">{aggregatorError}</small>}
           </div>
+          <a
+            className="aggregator-external-link"
+            href="https://www.xn--pevapakkumised-5hb.ee/tallinn"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Vaata Päevapakkumised.ee Tallinna päevapakkumisi (avaneb uuel vahelehel)"
+          >
+            <span>
+              <strong>Vaata Tallinna pakkumisi</strong>
+              <small>Avaneb brauseris · allalaadimist pole vaja</small>
+            </span>
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
         </section>
 
         <section className="results-section">

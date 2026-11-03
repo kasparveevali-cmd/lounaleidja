@@ -116,9 +116,9 @@ const sourceStatuses: SourceStatus[] = [
   {
     id: 'paevapakkumised',
     name: 'Päevapakkumised.ee',
-    url: 'https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine',
+    url: 'https://www.xn--pevapakkumised-5hb.ee/tallinn',
     status: 'permission-required',
-    message: 'Partneri andmevoog on võimalik, kuid kopeerimiseks on vaja kirjalikku litsentsi.',
+    message: 'Tallinna tänased tulemused avanevad algallikas otse brauseris; Lõunaleidjas taasavaldamiseks on vaja kirjalikku luba.',
     lastSuccessAt: null,
   },
   {

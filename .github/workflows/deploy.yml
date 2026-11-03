@@ -43,6 +43,8 @@ jobs:
         run: pnpm collect
 
       - name: Koosta koondallikate andmefail
+        env:
+          LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED: ${{ vars.LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED }}
         run: pnpm collect:aggregators
 
       - name: Kontrolli ja ehita

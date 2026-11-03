@@ -104,10 +104,14 @@ async function main() {
   const offerDate = tallinnDate()
   const officialJson = await readFile(officialOffersPath, 'utf8')
   const official = JSON.parse(officialJson) as OffersBundle
+  const paevapakkumisedEnabled = process.env.LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED === 'true'
+  const paevapakkumisedPromise = paevapakkumisedEnabled
+    ? fetchHtml(targetPages.paevapakkumised).then((html) => (
+        parsePaevapakkumisedHtml(html, offerDate)
+      ))
+    : Promise.resolve(unavailablePage('paevapakkumised'))
   const [paevapakkumisedResult, paevapraadResult] = await Promise.allSettled([
-    fetchHtml(targetPages.paevapakkumised).then((html) => (
-      parsePaevapakkumisedHtml(html, offerDate)
-    )),
+    paevapakkumisedPromise,
     fetchHtml(targetPages.paevapraad).then((html) => (
       parsePaevapraadHtml(html, offerDate)
     )),
@@ -139,6 +143,14 @@ async function main() {
     source.message = `Kogumine ebaõnnestus: ${failure}`
     source.lastSuccessAt = null
     bundle.errors.push({ sourceId: source.id, message: failure })
+  }
+  if (!paevapakkumisedEnabled) {
+    const source = bundle.sources.find((item) => item.id === 'paevapakkumised')
+    if (source) {
+      source.status = 'permission-required'
+      source.message = 'Tallinna tänased tulemused avanevad algallikas brauseris; automaatne voog aktiveeritakse ainult kirjaliku loa korral.'
+      source.lastSuccessAt = null
+    }
   }
 
   await mkdir(dirname(outputPath), { recursive: true })
