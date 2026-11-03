@@ -127,6 +127,10 @@ function restaurantMatchKey(value: string): string {
     .replace(/&/g, ' ja ')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim()
+  if (normalized.includes('rahva toit') && normalized.includes('tornimae')) {
+    return 'rahva toit tornimae'
+  }
+  if (normalized.includes('soorikukohvik')) return 'soorikukohvik'
   const withoutGenericWords = normalized
     .split(' ')
     .filter((part) => !['restoran', 'resto', 'kohvik', 'bistroo', 'bistro', 'cafe'].includes(part))
@@ -191,6 +195,7 @@ function normalizeForKey(value: string): string {
 
 function offerNameMatchKey(value: string): string {
   return normalizeForKey(value.replace(/\s*\(\s*[glpv](?:\s*,\s*[glpv])*\s*\)\s*\.?$/i, ''))
+    .replace(/\bpaeva supp\b/g, 'paevasupp')
 }
 
 function duplicateKey(offer: LunchOffer): string {

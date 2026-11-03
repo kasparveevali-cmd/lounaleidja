@@ -137,4 +137,34 @@ describe('mergeAggregatorFeed', () => {
       }),
     ])
   })
+
+  it('tunneb Rahva Toidu SEB nime ja päevasupi kirjapildi sama kohana ära', () => {
+    const officialOffer = {
+      ...rawOffer(),
+      restaurantId: 'rahvatoit-tornimae-seb',
+      restaurantName: 'Rahva Toit Tornimäe (SEB)',
+      address: 'Tornimäe 2, Tallinn',
+      offerName: 'Päevasupp',
+      price: 3.9,
+      sourceName: 'Rahva Toit Tornimäe ametlik menüü',
+      sourceUrl: 'https://rahvatoit.ee/tornimae/',
+    } as LunchOffer
+    const official: OffersBundle = {
+      generatedAt: '2026-10-26T05:00:00.000Z',
+      timezone: 'Europe/Tallinn',
+      offers: [officialOffer],
+      sources: [],
+      errors: [],
+    }
+    const aggregator = parseAggregatorFeed(rawFeed([
+      rawOffer({
+        restaurantName: 'Rahva Toit Tornimäe',
+        address: 'Tornimäe 2, Tallinn',
+        offerName: 'Päeva supp',
+        price: 3.9,
+      }),
+    ]), today)
+
+    expect(mergeAggregatorFeed(official, aggregator).offers).toEqual([officialOffer])
+  })
 })

@@ -3,9 +3,12 @@ import { describe, expect, it } from 'vitest'
 import {
   parseAmpsHtml,
   parseArterHtml,
+  parseCafeBoulevardSoupHtml,
   parseKristiineMarkdown,
   parseProtoHtml,
+  parseRahvatoitTornimaeHtml,
   parseRevalHtml,
+  parseSoorikukohvikHtml,
   parseUlemisteCityJson,
   parseVapianoHtml,
 } from './parsers'
@@ -113,6 +116,94 @@ describe('parseProtoHtml', () => {
     `, '26.10')
     expect(parsed.map((offer) => offer.price)).toEqual([3.5, 5.5, 1.85])
     expect(parsed[2].description).toBe('Ahjulõhe · Ahjukartulid')
+  })
+})
+
+describe('parseRahvatoitTornimaeHtml', () => {
+  const html = `
+    <section class="elementor-top-section">
+      <h1>03.11<br>päeva- Menüü</h1>
+      <div data-widget_type="text-editor.default">
+        <div><div dir="auto">Supid</div><div dir="auto">Tom Kha kanaga 3.90</div></div>
+        <div>
+          <div dir="auto">Praed</div>
+          <div dir="auto">Veisemaksastrooganov 5.60/ 6.80</div>
+          <div dir="auto">Ahjukanakints sinepi marinaadis 1 tk/ 2 tk 5.60 / 7.10</div>
+        </div>
+        <div><div dir="auto">Lihavaba</div><div dir="auto">Kinoa köögiviljadega 5.40/6.40</div></div>
+      </div>
+    </section>
+  `
+
+  it('loeb ainult küsitud kuupäeva menüü ja säilitab mõlemad hinnad', () => {
+    expect(parseRahvatoitTornimaeHtml(html, '2026-11-03')).toEqual([
+      { offerName: 'Tom Kha kanaga', description: null, price: 3.9 },
+      { offerName: 'Veisemaksastrooganov', description: 'Hinnad: 5,60 / 6,80 €', price: 5.6 },
+      {
+        offerName: 'Ahjukanakints sinepi marinaadis 1 tk/ 2 tk',
+        description: 'Hinnad: 5,60 / 7,10 €',
+        price: 5.6,
+      },
+      { offerName: 'Kinoa köögiviljadega', description: 'Hinnad: 5,40 / 6,40 €', price: 5.4 },
+    ])
+  })
+
+  it('ei avalda aegunud kuupäeva menüüd', () => {
+    expect(parseRahvatoitTornimaeHtml(html, '2026-11-04')).toEqual([])
+  })
+})
+
+describe('parseCafeBoulevardSoupHtml', () => {
+  it('kuvab nimetu supi kasutajale arusaadava päevapakkumisena', () => {
+    const parsed = parseCafeBoulevardSoupHtml(`
+      <meta property="og:description" content="Hind on 99.90 €">
+      <div class="content_block default">
+        <article><h2>Kuum supp kohapeal ja kaasa!</h2>
+          <p>Pakume suppi iga päev kell alates 11.30.<br>Hind on <strong>4.90 €.</strong></p>
+        </article>
+      </div>
+    `)
+    expect(parsed).toEqual([
+      { offerName: 'Päeva supp', description: null, price: 4.9 },
+    ])
+  })
+})
+
+describe('parseSoorikukohvikHtml', () => {
+  it('loeb Kentmanni tabelist supi ja ainult päevapraadide parema veeru', () => {
+    const parsed = parseSoorikukohvikHtml(`
+      <table><tbody>
+        <tr><td>Supid</td><td></td><td>Joogid</td><td></td></tr>
+        <tr><td>Päevasupp</td><td>3.00</td><td>Kohv</td><td>2.50</td></tr>
+      </tbody></table>
+      <table><tbody>
+        <tr><td><b>Praed</b></td><td></td><td><b>Päevapraed</b></td><td></td></tr>
+        <tr><td>Spagetid singiga</td><td>5.80</td><td>Kanapraad</td><td>7.00</td></tr>
+        <tr><td>Omlett</td><td>5.30</td><td>Kalafileepraad</td><td>7.50</td></tr>
+      </tbody></table>
+    `, 'kentmanni')
+    expect(parsed).toEqual([
+      { offerName: 'Päevasupp', description: 'Päevapakkumine', price: 3 },
+      { offerName: 'Kanapraad', description: 'Päevapraad', price: 7 },
+      { offerName: 'Kalafileepraad', description: 'Päevapraad', price: 7.5 },
+    ])
+  })
+
+  it('eristab Nõmme püsimenüü praed päevapakkumise supist', () => {
+    const parsed = parseSoorikukohvikHtml(`
+      <table><tbody><tr><td><b>Supid</b></td></tr></tbody></table>
+      <table><tbody><tr><td>Päevasupp</td><td>3.00</td></tr></tbody></table>
+      <table><tbody><tr><td><b>Praed</b></td></tr></tbody></table>
+      <table><tbody>
+        <tr><td>Viinerid kartulisalatiga</td><td>6.30</td></tr>
+        <tr><td>Kodune kotlet</td><td>7.20</td></tr>
+      </tbody></table>
+    `, 'nomme')
+    expect(parsed).toEqual([
+      { offerName: 'Päevasupp', description: 'Päevapakkumine', price: 3 },
+      { offerName: 'Viinerid kartulisalatiga', description: 'Püsimenüü · Praad', price: 6.3 },
+      { offerName: 'Kodune kotlet', description: 'Püsimenüü · Praad', price: 7.2 },
+    ])
   })
 })
 

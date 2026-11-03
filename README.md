@@ -1,6 +1,6 @@
 # Lõunaleidja
 
-Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, kuupäevaga kinnitatud lõunapakkumisi. Rakendus on teadlikult konservatiivne: eilseid või kuupäevata pakkumisi tänaste tulemustena ei näidata ning igal pakkumisel on link algallikale.
+Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid tänaseid lõunapakkumisi. Kuupäevaga menüüd kontrollitakse kuupäeva järgi; ametlikud püsivad päeva- ja püsimenüü valikud märgitakse kirjelduses vastavalt ning igal pakkumisel on link algallikale.
 
 - Avalik rakendus: [kasparveevali-cmd.github.io/lounaleidja](https://kasparveevali-cmd.github.io/lounaleidja/)
 - Lähtekood: [github.com/kasparveevali-cmd/lounaleidja](https://github.com/kasparveevali-cmd/lounaleidja)
@@ -32,6 +32,9 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid, 
 | [PROTO ametlik lõunamenüü](https://www.prototehas.ee/menuu/) | töötab | Kuupäevaga supi suurused ja lõunabufee hind koos buffet' koostisega. |
 | [Arteri kvartali ametlik päevamenüü](https://arter.ee/restoranid/paevapakkumised/) | töötab | Jooksva nädala kuupäevaga pakkumised Bistroo Arterile ja VÕIVÕI Tuli Resto Baarile aadressil Liivalaia 36. |
 | [Ülemiste City ametlik päevamenüü](https://www.ulemistecity.ee/paevapakkumised/) | töötab | Avaliku lehe ametlik kuupäevapõhine JSON-voog sisaldab hindu, aadresse ja koordinaate 11 söögikohale: AIKO BOWL, Fredo, Fredo Lurich, Gala Sushi, Mona, kaks Plus Kohvikut, Freya Foodbar, NuFace, Nuudel ja Airo Cafe. |
+| [Rahva Toit Tornimäe](https://rahvatoit.ee/tornimae/) | töötab | Ametlik kuupäevaga päeva menüü kuvatakse nimega „Rahva Toit Tornimäe (SEB)”. Kahe suuruse või portsjoni korral näidatakse alghinda ja kirjelduses mõlemat hinda. |
+| [Café Boulevardi päevapakkumine](https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/) | töötab | Ametlik leht kinnitab iga päev pakutava supi ja hinna, kuid ei nimeta supi liiki; seepärast kuvatakse see nimega „Päeva supp”. |
+| [Sõõrikukohvik](https://soorikukohvik.ee/) | töötab | Kentmanni lehe päevasupp ja päevapraed ning Nõmme päevasupp ja ametliku püsimenüü praed. Nõmme praed on eksituse vältimiseks märgitud püsimenüüks. |
 | [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/iseteenindus/liitumine) | vajab kirjalikku luba | Teenus pakub partneritele andmete jagamist teistesse keskkondadesse, kuid kasutustingimused ei luba andmeid omal algatusel kopeerida. |
 | [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
 
@@ -73,7 +76,7 @@ Kõik kontrollid korraga:
 pnpm check
 ```
 
-Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO, Arteri kvartali ja Ülemiste City menüüparserid.
+Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO, Arteri kvartali, Ülemiste City, Rahva Toidu, Café Boulevardi ja Sõõrikukohviku menüüparserid.
 
 ## Automaatne uuendamine
 
@@ -83,7 +86,7 @@ Töövoog:
 
 1. kontrollib iga aktiivse allika `robots.txt` reegleid;
 2. ootab enne menüülehe päringut, et vältida liigset koormust;
-3. loeb ametlikult lehelt ainult tänase kuupäevaga pakkumised;
+3. loeb ametlikult lehelt tänase kuupäevaga pakkumised ning selgelt märgitud püsivad päeva- või püsimenüü valikud;
 4. normaliseerib andmed, valideerib väljad ja eemaldab duplikaadid;
 5. ühe allika vea korral jätkab teistega ning säilitab sama päeva varasema vahemälu;
 6. loeb seadistuse olemasolul litsentsitud partnerivoo ning aktiveerib ainult selles tegelikult töötava agregaatori;

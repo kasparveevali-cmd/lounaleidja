@@ -6,10 +6,13 @@ import {
   compact,
   parseAmpsHtml,
   parseArterHtml,
+  parseCafeBoulevardSoupHtml,
   parseKristiineMarkdown,
   parsePrice,
   parseProtoHtml,
+  parseRahvatoitTornimaeHtml,
   parseRevalHtml,
+  parseSoorikukohvikHtml,
   parseUlemisteCityJson,
   parseVapianoHtml,
   type ParsedOffer,
@@ -84,6 +87,30 @@ const sourceStatuses: SourceStatus[] = [
     url: 'https://www.ulemistecity.ee/paevapakkumised/',
     status: 'active',
     message: 'Ametlik kuupäevapõhine JSON-voog 11 Ülemiste City söögikoha menüüde ja asukohtadega.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'rahvatoit-tornimae',
+    name: 'Rahva Toit Tornimäe ametlik menüü',
+    url: 'https://rahvatoit.ee/tornimae/',
+    status: 'active',
+    message: 'Ametlik kuupäevaga päeva menüü Rahva Toidu Tornimäe (SEB) asukohale.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'cafe-boulevard',
+    name: 'Café Boulevardi ametlik päevapakkumine',
+    url: 'https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/',
+    status: 'active',
+    message: 'Ametlik iga päev kehtiv supipakkumine; supi liik on algallikas täpsustamata.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'soorikukohvik',
+    name: 'Sõõrikukohviku ametlik menüü',
+    url: 'https://soorikukohvik.ee/',
+    status: 'active',
+    message: 'Ametlikud päeva- ja püsimenüü pakkumised Kentmanni ja Nõmme asukohale.',
     lastSuccessAt: null,
   },
   {
@@ -172,6 +199,39 @@ const arterLocations: Record<string, RestaurantLocation> = {
     address: 'Liivalaia tn 36, 10132 Tallinn',
     latitude: 59.42976,
     longitude: 24.75934,
+  },
+}
+
+const rahvatoitTornimaeLocation: RestaurantLocation = {
+  id: 'rahvatoit-tornimae-seb',
+  name: 'Rahva Toit Tornimäe (SEB)',
+  address: 'Tornimäe 2, Tallinn',
+  latitude: 59.4339538,
+  longitude: 24.7605539,
+}
+
+const cafeBoulevardLocation: RestaurantLocation = {
+  id: 'cafe-boulevard',
+  name: 'Café Boulevard',
+  address: 'Liivalaia 33, Tallinn',
+  latitude: 59.4302721,
+  longitude: 24.7575808,
+}
+
+const soorikukohvikLocations: Record<'kentmanni' | 'nomme', RestaurantLocation> = {
+  kentmanni: {
+    id: 'soorikukohvik-kentmanni',
+    name: 'Sõõrikukohvik Kentmanni',
+    address: 'Kentmanni 21, Tallinn',
+    latitude: 59.4293218,
+    longitude: 24.7541156,
+  },
+  nomme: {
+    id: 'soorikukohvik-nomme',
+    name: 'Sõõrikukohvik Nõmme',
+    address: 'Jaama 12, Tallinn',
+    latitude: 59.3865741,
+    longitude: 24.6849057,
   },
 }
 
@@ -580,6 +640,69 @@ async function collectUlemisteCity(now = new Date()) {
   return offers
 }
 
+async function collectRahvatoitTornimae(now = new Date()) {
+  const sourceUrl = 'https://rahvatoit.ee/tornimae/'
+  const date = tallinnDateParts(now)
+  const parsed = parseRahvatoitTornimaeHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, rahvatoitTornimaeLocation, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Rahva Toit Tornimäe ametlik menüü',
+    sourceUrl,
+    lunchStartTime: '09:00',
+    lunchEndTime: '15:00',
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
+  return offers
+}
+
+async function collectCafeBoulevard(now = new Date()) {
+  const sourceUrl = 'https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/'
+  const date = tallinnDateParts(now)
+  const parsed = parseCafeBoulevardSoupHtml(await fetchSource(sourceUrl))
+  const offers = offersForLocation(parsed, cafeBoulevardLocation, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Café Boulevardi ametlik päevapakkumine',
+    sourceUrl,
+    lunchStartTime: '11:30',
+    lunchEndTime: date.isWeekday ? '19:00' : '17:00',
+  })
+  if (!offers.length) throw new Error('Päevasupi pakkumist ja hinda ei leitud')
+  return offers
+}
+
+async function collectSoorikukohvik(now = new Date()) {
+  const date = tallinnDateParts(now)
+  const fetchedAt = now.toISOString()
+  const pages = [
+    {
+      mode: 'kentmanni' as const,
+      sourceUrl: 'https://soorikukohvik.ee/kentmanni/',
+    },
+    {
+      mode: 'nomme' as const,
+      sourceUrl: 'https://soorikukohvik.ee/nomme/',
+    },
+  ]
+  const offers: LunchOffer[] = []
+
+  for (const page of pages) {
+    const parsed = parseSoorikukohvikHtml(await fetchSource(page.sourceUrl), page.mode)
+    if (!parsed.length) throw new Error(`${page.mode === 'kentmanni' ? 'Kentmanni' : 'Nõmme'} menüüd ei leitud`)
+    offers.push(...offersForLocation(parsed, soorikukohvikLocations[page.mode], {
+      offerDate: date.iso,
+      fetchedAt,
+      sourceName: 'Sõõrikukohviku ametlik menüü',
+      sourceUrl: page.sourceUrl,
+      lunchStartTime: null,
+      lunchEndTime: null,
+    }))
+  }
+
+  return offers
+}
+
 function isValidOffer(offer: LunchOffer): boolean {
   return Boolean(
     offer.restaurantId &&
@@ -633,6 +756,9 @@ const collectors: Array<{
   { id: 'proto', sourceName: 'PROTO ametlik lõunamenüü', collect: collectProto },
   { id: 'arter-quarter', sourceName: 'Arteri kvartali ametlik päevamenüü', collect: collectArter },
   { id: 'ulemiste-city', sourceName: 'Ülemiste City ametlik päevamenüü', collect: collectUlemisteCity },
+  { id: 'rahvatoit-tornimae', sourceName: 'Rahva Toit Tornimäe ametlik menüü', collect: collectRahvatoitTornimae },
+  { id: 'cafe-boulevard', sourceName: 'Café Boulevardi ametlik päevapakkumine', collect: collectCafeBoulevard },
+  { id: 'soorikukohvik', sourceName: 'Sõõrikukohviku ametlik menüü', collect: collectSoorikukohvik },
 ]
 
 async function main() {

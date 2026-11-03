@@ -287,6 +287,140 @@ export function parseProtoHtml(html: string, dateShort: string): ParsedOffer[] {
   return offers
 }
 
+function parseRahvatoitOffer(value: string): ParsedOffer | null {
+  const line = compact(value)
+  const match = line.match(
+    /^(.+?)\s+(\d+(?:[.,]\d{1,2})?)\s*€?(?:\s*\/\s*(\d+(?:[.,]\d{1,2})?)\s*€?)?$/,
+  )
+  if (!match) return null
+
+  const firstPrice = parsePrice(match[2])
+  const secondPrice = match[3] ? parsePrice(match[3]) : null
+  if (firstPrice === null || (match[3] && secondPrice === null)) return null
+
+  const prices = secondPrice === null ? [firstPrice] : [firstPrice, secondPrice]
+  const formatPrice = (price: number) => price.toFixed(2).replace('.', ',')
+  return {
+    offerName: compact(match[1]),
+    description: secondPrice === null
+      ? null
+      : `Hinnad: ${prices.map(formatPrice).join(' / ')} €`,
+    price: Math.min(...prices),
+  }
+}
+
+export function parseRahvatoitTornimaeHtml(html: string, dateIso: string): ParsedOffer[] {
+  const dateMatch = dateIso.match(/^\d{4}-(\d{2})-(\d{2})$/)
+  if (!dateMatch) return []
+  const expectedMonth = Number(dateMatch[1])
+  const expectedDay = Number(dateMatch[2])
+  const $ = load(html)
+  const dayHeading = $('h1, h2')
+    .filter((_, element) => {
+      const headingMatch = compact($(element).text()).match(
+        /^(\d{1,2})\.(\d{1,2})\s*päeva\s*-\s*menüü$/i,
+      )
+      return Boolean(
+        headingMatch
+        && Number(headingMatch[1]) === expectedDay
+        && Number(headingMatch[2]) === expectedMonth,
+      )
+    })
+    .first()
+  if (!dayHeading.length) return []
+
+  const scope = dayHeading.closest('section, article, main')
+  if (!scope.length) return []
+  const menuLines = scope.find('[data-widget_type="text-editor.default"] [dir="auto"]')
+  const lines = menuLines.length ? menuLines : scope.find('.elementor-widget-text-editor [dir="auto"]')
+  return lines
+    .toArray()
+    .map((element) => parseRahvatoitOffer($(element).text()))
+    .filter((offer): offer is ParsedOffer => offer !== null)
+}
+
+export function parseCafeBoulevardSoupHtml(html: string): ParsedOffer[] {
+  const $ = load(html)
+  const offerBlock = $('.content_block')
+    .filter((_, element) => {
+      const block = $(element)
+      return /kuum supp/i.test(compact(block.find('h1, h2, h3').first().text()))
+        && /pakume suppi iga päev/i.test(compact(block.text()))
+    })
+    .first()
+  if (!offerBlock.length) return []
+
+  const priceMatch = compact(offerBlock.text()).match(
+    /Hind\s+on\s+(\d+(?:[.,]\d{1,2})?)\s*€/i,
+  )
+  const price = priceMatch ? parsePrice(priceMatch[1]) : null
+  return price === null
+    ? []
+    : [{ offerName: 'Päeva supp', description: null, price }]
+}
+
+function parseSoorikRow(
+  cells: ReturnType<ReturnType<typeof load>>[],
+  nameIndex: number,
+  description: string,
+): ParsedOffer | null {
+  const offerName = compact(cells[nameIndex]?.text() ?? '')
+  const price = parsePrice(cells[nameIndex + 1]?.text() ?? '')
+  if (!offerName || price === null) return null
+  return { offerName, description, price }
+}
+
+export function parseSoorikukohvikHtml(
+  html: string,
+  mode: 'kentmanni' | 'nomme',
+): ParsedOffer[] {
+  const $ = load(html)
+  const offers: ParsedOffer[] = []
+
+  const soupCell = $('td, th')
+    .filter((_, element) => compact($(element).text()) === 'Päevasupp')
+    .first()
+  if (soupCell.length) {
+    const soupRowCells = soupCell.parent('tr').children('td, th').toArray().map((cell) => $(cell))
+    const soupIndex = soupRowCells.findIndex((cell) => compact(cell.text()) === 'Päevasupp')
+    const soup = parseSoorikRow(soupRowCells, soupIndex, 'Päevapakkumine')
+    if (soup) offers.push(soup)
+  }
+
+  if (mode === 'kentmanni') {
+    const headingCell = $('td, th')
+      .filter((_, element) => compact($(element).text()) === 'Päevapraed')
+      .first()
+    const headingRow = headingCell.parent('tr')
+    const table = headingRow.closest('table')
+    const headingCells = headingRow.children('td, th').toArray().map((cell) => $(cell))
+    const dailyColumn = headingCells.findIndex((cell) => compact(cell.text()) === 'Päevapraed')
+    const rows = table.find('tr').toArray()
+    const headingRowIndex = rows.indexOf(headingRow.get(0)!)
+    if (dailyColumn >= 0 && headingRowIndex >= 0) {
+      for (const row of rows.slice(headingRowIndex + 1)) {
+        const cells = $(row).children('td, th').toArray().map((cell) => $(cell))
+        const offer = parseSoorikRow(cells, dailyColumn, 'Päevapraad')
+        if (offer) offers.push(offer)
+      }
+    }
+  } else {
+    const headingTable = $('table')
+      .filter((_, table) => $(table).find('td, th').toArray().some((cell) => (
+        compact($(cell).text()) === 'Praed' && $(cell).find('b, strong').length > 0
+      )))
+      .first()
+    const menuTable = headingTable.nextAll('table').first()
+    menuTable.find('tr').each((_, row) => {
+      const cells = $(row).children('td, th').toArray().map((cell) => $(cell))
+      const offer = parseSoorikRow(cells, 0, 'Püsimenüü · Praad')
+      if (offer) offers.push(offer)
+    })
+  }
+
+  return offers
+}
+
 function arterRangeContainsDate(value: string, dateIso: string) {
   const match = compact(value).match(
     /^(\d{1,2})\.(\d{1,2})\s*[–—-]\s*(\d{1,2})\.(\d{1,2})\.(\d{4})$/,
