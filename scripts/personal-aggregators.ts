@@ -99,7 +99,7 @@ function expectedPaevapakkumisedDate(dateIso: string) {
     Sun: 'pühapäeval',
   }
   const [, month, day] = dateIso.split('-')
-  return `${weekdayLocative[weekday]}, ${Number(day)}.${month}`
+  return `${weekdayLocative[weekday]}, ${day}.${month}`
 }
 
 function assertDateLabel(actual: string, expected: string, provider: string) {

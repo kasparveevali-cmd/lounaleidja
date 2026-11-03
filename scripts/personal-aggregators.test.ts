@@ -54,6 +54,26 @@ describe('isiklikud koondlehed', () => {
     ])
   })
 
+  it('aktsepteerib Päevapakkumised.ee nulliga algavat kuupäeva', () => {
+    const parsed = parsePaevapakkumisedHtml(`
+      <div class="header"><h1><span class="headerDate">Teisipäeval, 03.11</span></h1></div>
+      <div id="offers">
+        <article class="meal sortable animated" id="kohvik">
+          <div class="dinerInfo"><h3><a href="/kohvik">Kohvik</a></h3></div>
+          <div class="dinerButtons">
+            <a href="https://maps.example/place/@59.437,24.752,17z" title="Roseni 7, Tallinn"><i class="icon-location"></i></a>
+          </div>
+          <div class="mealInfo">
+            <div class="offer"><span class="lang-et">Praad <strong>7,50 €</strong></span></div>
+          </div>
+        </article>
+      </div>
+    `, '2026-11-03')
+
+    expect(parsed.restaurants).toHaveLength(1)
+    expect(parsed.restaurants[0].offers[0].offerName).toBe('Praad')
+  })
+
   it('loeb ainult Päevapraad.ee täisvaate read ja jätab teadmata hinna vahele', () => {
     const parsed = parsePaevapraadHtml(`
       <span class="datum"><span>Esmaspäev, 26. oktoober</span></span>
