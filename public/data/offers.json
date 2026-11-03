@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T19:05:03.736Z",
+  "generatedAt": "2026-11-03T19:45:47.532Z",
   "timezone": "Europe/Tallinn",
   "offers": [
     {
@@ -17,7 +17,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -35,7 +35,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -53,7 +53,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -71,7 +71,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -89,7 +89,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/lounasook-ulemiste/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -107,7 +107,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -125,7 +125,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -143,7 +143,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -161,7 +161,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -179,7 +179,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -197,7 +197,61 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/airo-cafe/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "alfred-pub-nomme",
+      "restaurantName": "Alfred Pub",
+      "address": "Rahumäe tee 25, Tallinn",
+      "latitude": 59.3891992,
+      "longitude": 24.7025144,
+      "offerName": "Borš sealihaga",
+      "description": "Päevasupp",
+      "price": 3.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": null,
+      "lunchEndTime": null,
+      "sourceName": "Alfred Pubi ametlik nädalamenüü",
+      "sourceUrl": "https://alfred.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "alfred-pub-nomme",
+      "restaurantName": "Alfred Pub",
+      "address": "Rahumäe tee 25, Tallinn",
+      "latitude": 59.3891992,
+      "longitude": 24.7025144,
+      "offerName": "Üleküpsetatud kala majoneesi kastmes ja riis",
+      "description": "Päevapraad",
+      "price": 6.5,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": null,
+      "lunchEndTime": null,
+      "sourceName": "Alfred Pubi ametlik nädalamenüü",
+      "sourceUrl": "https://alfred.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "alfred-pub-nomme",
+      "restaurantName": "Alfred Pub",
+      "address": "Rahumäe tee 25, Tallinn",
+      "latitude": 59.3891992,
+      "longitude": 24.7025144,
+      "offerName": "Praad ja supp",
+      "description": "Üleküpsetatud kala majoneesi kastmes ja riis · Borš sealihaga",
+      "price": 9.5,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": null,
+      "lunchEndTime": null,
+      "sourceName": "Alfred Pubi ametlik nädalamenüü",
+      "sourceUrl": "https://alfred.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -215,7 +269,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -233,7 +287,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -251,7 +305,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -269,7 +323,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -287,7 +341,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -305,7 +359,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -323,7 +377,7 @@
       "lunchEndTime": null,
       "sourceName": "AMPSi ametlik päevamenüü",
       "sourceUrl": "https://amps.ee/lounapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -341,7 +395,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -359,7 +413,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -377,7 +431,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -395,7 +449,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -413,7 +467,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -431,7 +485,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -449,7 +503,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -467,7 +521,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -485,7 +539,7 @@
       "lunchEndTime": "19:00",
       "sourceName": "Café Boulevardi ametlik päevapakkumine",
       "sourceUrl": "https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -503,7 +557,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -521,7 +575,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -539,7 +593,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -557,7 +611,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -575,7 +629,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -593,7 +647,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -611,7 +665,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -629,7 +683,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -647,7 +701,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -665,7 +719,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -683,7 +737,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -701,7 +755,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/fredo-lurich/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -719,7 +773,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -737,7 +791,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -755,7 +809,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -773,7 +827,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -791,7 +845,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -809,7 +863,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -827,7 +881,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/freya-foodbar/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -845,7 +899,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -863,7 +917,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -881,7 +935,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -899,7 +953,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -917,7 +971,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/gala-sushi/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -935,7 +989,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -953,7 +1007,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -971,7 +1025,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -989,7 +1043,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1007,7 +1061,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1025,7 +1079,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1043,7 +1097,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1061,7 +1115,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Hiiu Resto ametlik menüü",
       "sourceUrl": "https://hiiuresto.eu/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1079,7 +1133,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1097,7 +1151,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1115,7 +1169,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1133,7 +1187,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1151,7 +1205,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1169,7 +1223,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1187,7 +1241,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1205,7 +1259,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1223,7 +1277,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1241,7 +1295,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1259,7 +1313,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1277,7 +1331,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1295,7 +1349,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1313,7 +1367,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/mona/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1331,7 +1385,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1349,7 +1403,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1367,7 +1421,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1385,7 +1439,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1403,7 +1457,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1421,7 +1475,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1439,7 +1493,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/njuface/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1457,7 +1511,115 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/nuudel/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Futomaki vürtsika tuunikalaga",
+      "description": "Päevapakkumine · riis, nori, toorjuust, kurk, tuunikala, tšillimajonees",
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Lobio, ciabatta ja roheline sibul",
+      "description": "Päevapakkumine",
+      "price": 8.4,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Koorene kanapasta sibula, päikesekuivatatud tomatite ja juustuga",
+      "description": "Päevapakkumine",
+      "price": 8.4,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Poke bowl kanaga",
+      "description": "Poke bar · Kana, edamame, Korean Carrot, marineeritud punane kapsas, salatisegu, kurk, vutimuna, seesam, ingver, riis, teriyaki kaste",
+      "price": 11,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Poke bowl hiidkrevettidega",
+      "description": "Poke bar · Hiidkrevetid, edamame, Korean Carrot, marineeritud punane kapsas, salatisegu, kurk, vutimuna, seesam, ingver, riis, tšillimajonees",
+      "price": 12,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "om-house-rotermanni",
+      "restaurantName": "Om.House",
+      "address": "Rotermanni 18/2, Tallinn",
+      "latitude": 59.4394319,
+      "longitude": 24.758036,
+      "offerName": "Poke bowl põletatud / teriyaki lõhega",
+      "description": "Poke bar · Põletatud või teriyaki lõhe, edamame, Korean Carrot, marineeritud punane kapsas, salatisegu, kurk, vutimuna, seesam, ingver, riis, tšillimajonees",
+      "price": 13,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Om.House’i ametlik lõunamenüü",
+      "sourceUrl": "https://omhouse.ee/et/our-menu",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1475,7 +1637,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1493,7 +1655,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1511,7 +1673,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1529,7 +1691,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1547,7 +1709,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1565,7 +1727,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1583,7 +1745,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1601,7 +1763,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik-tervisemaja-2/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1619,7 +1781,7 @@
       "lunchEndTime": null,
       "sourceName": "Ülemiste City ametlik päevamenüü",
       "sourceUrl": "https://www.ulemistecity.ee/sook/plus-kohvik-tervisemaja-2/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1637,7 +1799,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1655,7 +1817,79 @@
       "lunchEndTime": "14:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "poke-bowl-jarve",
+      "restaurantName": "Poké Bowl Järve",
+      "address": "Pärnu maantee 238, Tallinn",
+      "latitude": 59.393409,
+      "longitude": 24.7192687,
+      "offerName": "Teriyaki riisikauss Korea tempeh’ga",
+      "description": null,
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "14:00",
+      "sourceName": "Poké Bowli ametlik lõunamenüü",
+      "sourceUrl": "https://pokebowl.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "poke-bowl-mustamae",
+      "restaurantName": "Poké Bowl Mustamäe",
+      "address": "A. H. Tammsaare tee 104a, Tallinn",
+      "latitude": 59.4085035,
+      "longitude": 24.6887486,
+      "offerName": "Teriyaki riisikauss Korea tempeh’ga",
+      "description": null,
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "14:00",
+      "sourceName": "Poké Bowli ametlik lõunamenüü",
+      "sourceUrl": "https://pokebowl.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "poke-bowl-viru",
+      "restaurantName": "Poké Bowl Viru",
+      "address": "Viru väljak 4, Tallinn",
+      "latitude": 59.4365992,
+      "longitude": 24.7549171,
+      "offerName": "Teriyaki riisikauss Korea tempeh’ga",
+      "description": null,
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "14:00",
+      "sourceName": "Poké Bowli ametlik lõunamenüü",
+      "sourceUrl": "https://pokebowl.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "poke-bowl-ulemiste",
+      "restaurantName": "Poké Bowl Ülemiste",
+      "address": "Suur-Sõjamäe 4, Tallinn",
+      "latitude": 59.4215906,
+      "longitude": 24.7941522,
+      "offerName": "Teriyaki riisikauss Korea tempeh’ga",
+      "description": null,
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "14:00",
+      "sourceName": "Poké Bowli ametlik lõunamenüü",
+      "sourceUrl": "https://pokebowl.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1673,7 +1907,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1691,7 +1925,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1709,7 +1943,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "PROTO ametlik lõunamenüü",
       "sourceUrl": "https://www.prototehas.ee/menuu/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1727,7 +1961,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1745,7 +1979,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1763,7 +1997,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1781,7 +2015,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1799,7 +2033,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1817,7 +2051,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1835,7 +2069,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1853,7 +2087,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1871,7 +2105,97 @@
       "lunchEndTime": "15:00",
       "sourceName": "Rahva Toit Tornimäe ametlik menüü",
       "sourceUrl": "https://rahvatoit.ee/tornimae/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "allee-restoran",
+      "restaurantName": "Restoran ALLEE",
+      "address": "Aia 18, Tallinn",
+      "latitude": 59.4397428,
+      "longitude": 24.7512851,
+      "offerName": "Hapuoblikasupp",
+      "description": "Päevasupp",
+      "price": 4.5,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "ALLEE restorani ametlik lõunamenüü",
+      "sourceUrl": "https://www.alleerestoran.ee/menuu/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "allee-restoran",
+      "restaurantName": "Restoran ALLEE",
+      "address": "Aia 18, Tallinn",
+      "latitude": 59.4397428,
+      "longitude": 24.7512851,
+      "offerName": "Prantsusepärane sealiha kartuli ja tomati-kurgisalatiga",
+      "description": "Päevapraad",
+      "price": 8.5,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "ALLEE restorani ametlik lõunamenüü",
+      "sourceUrl": "https://www.alleerestoran.ee/menuu/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "scotland-yard-tallinn",
+      "restaurantName": "Scotland Yard",
+      "address": "Mere pst 6, Tallinn",
+      "latitude": 59.4390203,
+      "longitude": 24.7543785,
+      "offerName": "piprane kanasupp kartuliga",
+      "description": "Päevasupp",
+      "price": 5.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Scotland Yardi ametlik lõunamenüü",
+      "sourceUrl": "https://www.scotlandyard.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "scotland-yard-tallinn",
+      "restaurantName": "Scotland Yard",
+      "address": "Mere pst 6, Tallinn",
+      "latitude": 59.4390203,
+      "longitude": 24.7543785,
+      "offerName": "Praetud sealiha, koorene Dijoni sinepikaste, kartulipüree ja herned",
+      "description": "Päevapraad",
+      "price": 8.5,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Scotland Yardi ametlik lõunamenüü",
+      "sourceUrl": "https://www.scotlandyard.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "scotland-yard-tallinn",
+      "restaurantName": "Scotland Yard",
+      "address": "Mere pst 6, Tallinn",
+      "latitude": 59.4390203,
+      "longitude": 24.7543785,
+      "offerName": "Kanaburger vürtsika majakastme, Cheddari juustu, marineeritud kurgi ja friikartulitega",
+      "description": "Nädalapraad",
+      "price": 9.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "12:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Scotland Yardi ametlik lõunamenüü",
+      "sourceUrl": "https://www.scotlandyard.ee/louna/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1889,7 +2213,61 @@
       "lunchEndTime": "15:00",
       "sourceName": "Kristiine Keskuse ametlik lõunavoog",
       "sourceUrl": "https://www.kristiinekeskus.ee/lounapakkumised",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "sushiart-arsenal",
+      "restaurantName": "SushiArt Arsenal",
+      "address": "Erika 14, Tallinn",
+      "latitude": 59.4514602,
+      "longitude": 24.7173827,
+      "offerName": "Sensei",
+      "description": "lõhe, lumekrabi, toorjuust, kurk, aioli, sibul",
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "16:00",
+      "sourceName": "SushiArt’i ametlik lõunamenüü",
+      "sourceUrl": "https://sushiart.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "sushiart-arsenal",
+      "restaurantName": "SushiArt Arsenal",
+      "address": "Erika 14, Tallinn",
+      "latitude": 59.4514602,
+      "longitude": 24.7173827,
+      "offerName": "Hiidkreveti tempura",
+      "description": "hiidkrevett, toorjust, kurk, unagi kaste",
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "16:00",
+      "sourceName": "SushiArt’i ametlik lõunamenüü",
+      "sourceUrl": "https://sushiart.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "sushiart-arsenal",
+      "restaurantName": "SushiArt Arsenal",
+      "address": "Erika 14, Tallinn",
+      "latitude": 59.4514602,
+      "longitude": 24.7173827,
+      "offerName": "Donburi lõhega",
+      "description": null,
+      "price": 8.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "16:00",
+      "sourceName": "SushiArt’i ametlik lõunamenüü",
+      "sourceUrl": "https://sushiart.ee/",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1907,7 +2285,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1925,7 +2303,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1943,7 +2321,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1961,7 +2339,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1979,7 +2357,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -1997,7 +2375,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2015,7 +2393,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2033,7 +2411,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2051,7 +2429,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/kentmanni/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2069,7 +2447,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2087,7 +2465,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2105,7 +2483,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2123,7 +2501,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2141,7 +2519,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2159,7 +2537,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2177,7 +2555,7 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2195,7 +2573,241 @@
       "lunchEndTime": null,
       "sourceName": "Sõõrikukohviku ametlik menüü",
       "sourceUrl": "https://soorikukohvik.ee/nomme/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-balti-jaam",
+      "restaurantName": "Tokumaru Balti Jaama Turg",
+      "address": "Kopli 1, Tallinn",
+      "latitude": 59.4412223,
+      "longitude": 24.7350877,
+      "offerName": "MISOSUPP + ONIGIRI",
+      "description": "Misosupp lõhe või tofuga + Onigiri-riisipall sööja valikul",
+      "price": 7.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-balti-jaam",
+      "restaurantName": "Tokumaru Balti Jaama Turg",
+      "address": "Kopli 1, Tallinn",
+      "latitude": 59.4412223,
+      "longitude": 24.7350877,
+      "offerName": "Vürtsikas-lõhe-don",
+      "description": "Riisikauss värske lõhe-avokaadotartari, köögiviljade, yangneyom-kastme ja värske salatiga",
+      "price": 8.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-balti-jaam",
+      "restaurantName": "Tokumaru Balti Jaama Turg",
+      "address": "Kopli 1, Tallinn",
+      "latitude": 59.4412223,
+      "longitude": 24.7350877,
+      "offerName": "Kookosene shimeji-köögivilja-don",
+      "description": "Riisikauss köögiviljade, shimeji-seente, teriytaki-kookoskastme ja värske salatiga",
+      "price": 8.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-solaris",
+      "restaurantName": "Tokumaru Solaris",
+      "address": "Estonia pst 9, Tallinn",
+      "latitude": 59.4332203,
+      "longitude": 24.7518993,
+      "offerName": "Vürtsikas-lõhe-don",
+      "description": "Riisikauss värske lõhe-avokaadotartari, köögiviljade, yangneyom-kastme ja värske salatiga",
+      "price": 9.6,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/solaris/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-solaris",
+      "restaurantName": "Tokumaru Solaris",
+      "address": "Estonia pst 9, Tallinn",
+      "latitude": 59.4332203,
+      "longitude": 24.7518993,
+      "offerName": "Kookosene shimeji-köögivilja-don",
+      "description": "Riisikauss köögiviljade, shimeji-seente, teriyaki-kookoskastme ja värske salatiga",
+      "price": 9.6,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/solaris/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-solaris",
+      "restaurantName": "Tokumaru Solaris",
+      "address": "Estonia pst 9, Tallinn",
+      "latitude": 59.4332203,
+      "longitude": 24.7518993,
+      "offerName": "RAMEN ja GYOZA",
+      "description": "Kana-gyoza või vegan gyoza (5 tk) + Ramen (shoyu, shio või vegan shoyu) + +miso/kimchi 1,60+akamiso/ebishio 2,10",
+      "price": 9.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/solaris/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-solaris",
+      "restaurantName": "Tokumaru Solaris",
+      "address": "Estonia pst 9, Tallinn",
+      "latitude": 59.4332203,
+      "longitude": 24.7518993,
+      "offerName": "RAMEN+SUSHI",
+      "description": "Päevamaki (4 tk) + Ramen (shoyu, shio või vegan shoyu) + +miso/kimchi 1,60+akamiso/ebishio 2,10",
+      "price": 10.4,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/solaris/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-solaris",
+      "restaurantName": "Tokumaru Solaris",
+      "address": "Estonia pst 9, Tallinn",
+      "latitude": 59.4332203,
+      "longitude": 24.7518993,
+      "offerName": "RAMEN+SUSHI+GYOZA",
+      "description": "Kana-gyoza või vegan gyoza (5 tk) + Päevamaki (4 tk) + Ramen (shoyu, shio või vegan shoyu) + +miso/kimchi 1,60+akamiso/ebishio 2,10",
+      "price": 13.8,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/solaris/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-t1",
+      "restaurantName": "Tokumaru T1",
+      "address": "Peterburi tee 2, Tallinn",
+      "latitude": 59.4248486,
+      "longitude": 24.7959274,
+      "offerName": "Vürtsikas-lõhe-don",
+      "description": "Riisikauss värske lõhe-avokaadotartari, köögiviljade, yangneyom-kastme ja värske salatiga",
+      "price": 9.6,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/t1/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-t1",
+      "restaurantName": "Tokumaru T1",
+      "address": "Peterburi tee 2, Tallinn",
+      "latitude": 59.4248486,
+      "longitude": 24.7959274,
+      "offerName": "Kookosene shimeji-köögivilja-don",
+      "description": "Riisikauss köögiviljade, shimeji-seente, teriytaki-kookoskastme ja värske salatiga",
+      "price": 9.6,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/t1/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-t1",
+      "restaurantName": "Tokumaru T1",
+      "address": "Peterburi tee 2, Tallinn",
+      "latitude": 59.4248486,
+      "longitude": 24.7959274,
+      "offerName": "RAMEN+GYOZA",
+      "description": "Käsitöö kana-gyoza või vegan gyoza (5 tk) + Ramen (shoyu, shio või vegan tantan) + +miso/ kimchi 1,60+akamiso / ebishio 2,10",
+      "price": 9.9,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/t1/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-t1",
+      "restaurantName": "Tokumaru T1",
+      "address": "Peterburi tee 2, Tallinn",
+      "latitude": 59.4248486,
+      "longitude": 24.7959274,
+      "offerName": "RAMEN+SUSHI",
+      "description": "Päevamaki (4 tk) + Ramen (shoyu, shio või vegan tantan) + +miso/ kimchi 1,60+akamiso / ebishio 2,10",
+      "price": 10.4,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/t1/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
+      "verificationStatus": "verified"
+    },
+    {
+      "restaurantId": "tokumaru-t1",
+      "restaurantName": "Tokumaru T1",
+      "address": "Peterburi tee 2, Tallinn",
+      "latitude": 59.4248486,
+      "longitude": 24.7959274,
+      "offerName": "RAMEN+SUSHI+GYOZA",
+      "description": "Käsitöö kana-gyoza või vegan gyoza (5 tk) + Päevamaki (4 tk) + Ramen (shoyu, shio või vegan tantan) + +miso/ kimchi 1,60+akamiso / ebishio 2,10",
+      "price": 13.8,
+      "currency": "EUR",
+      "offerDate": "2026-11-03",
+      "lunchStartTime": "11:00",
+      "lunchEndTime": "15:00",
+      "sourceName": "Tokumaru ametlik lõunamenüü",
+      "sourceUrl": "https://www.tokumaru.ee/menyy/t1/lounamenyy",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2213,7 +2825,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2231,7 +2843,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2249,7 +2861,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2267,7 +2879,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2285,7 +2897,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2303,7 +2915,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2321,7 +2933,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2339,7 +2951,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2357,7 +2969,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2375,7 +2987,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2393,7 +3005,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2411,7 +3023,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2429,7 +3041,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2447,7 +3059,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2465,7 +3077,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2483,7 +3095,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2501,7 +3113,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2519,7 +3131,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2537,7 +3149,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2555,7 +3167,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2573,7 +3185,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2591,7 +3203,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2609,7 +3221,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2627,7 +3239,7 @@
       "lunchEndTime": "14:00",
       "sourceName": "Vapiano ametlik lõunamenüü",
       "sourceUrl": "https://vapiano.ee/louna/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2645,7 +3257,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2663,7 +3275,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2681,7 +3293,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     },
     {
@@ -2699,7 +3311,7 @@
       "lunchEndTime": "15:00",
       "sourceName": "Arteri kvartali ametlik päevamenüü",
       "sourceUrl": "https://arter.ee/restoranid/paevapakkumised/",
-      "fetchedAt": "2026-11-03T19:05:03.736Z",
+      "fetchedAt": "2026-11-03T19:45:47.532Z",
       "verificationStatus": "verified"
     }
   ],
@@ -2710,7 +3322,7 @@
       "url": "https://hiiuresto.eu/menuu/",
       "status": "active",
       "message": "Kuupäevaga nädalamenüü ametlikult restoranilehelt.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "kristiine-lunch",
@@ -2718,7 +3330,7 @@
       "url": "https://www.kristiinekeskus.ee/lounapakkumised",
       "status": "active",
       "message": "Ametlik masinloetav voog viie söögikoha menüüdega; LIDO menüü kehtib neljas Tallinna LIDO-s.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "reval-cafe",
@@ -2734,7 +3346,7 @@
       "url": "https://vapiano.ee/louna/",
       "status": "active",
       "message": "Nädalapakkumised neljale Tallinna Vapiano restoranile.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "amps",
@@ -2742,7 +3354,7 @@
       "url": "https://amps.ee/lounapakkumised/",
       "status": "active",
       "message": "Kuupäevaga pakkumised Järve ja Arena AMPSi asukohtadele.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "proto",
@@ -2750,7 +3362,7 @@
       "url": "https://www.prototehas.ee/menuu/",
       "status": "active",
       "message": "Kuupäevaga supi- ja lõunabufee pakkumised.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "arter-quarter",
@@ -2758,7 +3370,7 @@
       "url": "https://arter.ee/restoranid/paevapakkumised/",
       "status": "active",
       "message": "Ametlik kuupäevaga nädalamenüü Bistroo Arteri ja VÕIVÕI Tuli Resto Baari pakkumistega.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "ulemiste-city",
@@ -2766,7 +3378,7 @@
       "url": "https://www.ulemistecity.ee/paevapakkumised/",
       "status": "active",
       "message": "Ametlik kuupäevapõhine JSON-voog 11 Ülemiste City söögikoha menüüde ja asukohtadega.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "rahvatoit-tornimae",
@@ -2774,7 +3386,7 @@
       "url": "https://rahvatoit.ee/tornimae/",
       "status": "active",
       "message": "Ametlik kuupäevaga päeva menüü Rahva Toidu Tornimäe (SEB) asukohale.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "cafe-boulevard",
@@ -2782,7 +3394,7 @@
       "url": "https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/",
       "status": "active",
       "message": "Ametlik iga päev kehtiv supipakkumine; supi liik on algallikas täpsustamata.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "soorikukohvik",
@@ -2790,14 +3402,70 @@
       "url": "https://soorikukohvik.ee/",
       "status": "active",
       "message": "Ametlikud päeva- ja püsimenüü pakkumised Kentmanni ja Nõmme asukohale.",
-      "lastSuccessAt": "2026-11-03T19:05:03.736Z"
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "alfred-pub",
+      "name": "Alfred Pubi ametlik nädalamenüü",
+      "url": "https://alfred.ee/",
+      "status": "active",
+      "message": "Ametliku lehe täpse kuupäevaga päevapraad, supp ja komplekt.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "scotland-yard",
+      "name": "Scotland Yardi ametlik lõunamenüü",
+      "url": "https://www.scotlandyard.ee/louna/",
+      "status": "active",
+      "message": "Jooksva nädala päevapraad, päevasupp ja nädalapraad koos hindadega.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "om-house",
+      "name": "Om.House’i ametlik lõunamenüü",
+      "url": "https://omhouse.ee/et/our-menu",
+      "status": "active",
+      "message": "Nädalapäevapõhised lõunaroad ja argipäevane poke-baar.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "sushiart",
+      "name": "SushiArt’i ametlik lõunamenüü",
+      "url": "https://sushiart.ee/",
+      "status": "active",
+      "message": "Arsenal Keskuse nädalapäevapõhised sushi- ja donburi-pakkumised.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "allee",
+      "name": "ALLEE restorani ametlik lõunamenüü",
+      "url": "https://www.alleerestoran.ee/menuu/",
+      "status": "active",
+      "message": "Ametliku lehe kuupäevaga päevapraad ja päevasupp.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "poke-bowl",
+      "name": "Poké Bowli ametlik lõunamenüü",
+      "url": "https://pokebowl.ee/louna/",
+      "status": "active",
+      "message": "Jooksva nädala päevapakkumine neljas Tallinna asukohas; Kristiine on kaetud keskuse ametliku vooga.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
+    },
+    {
+      "id": "tokumaru",
+      "name": "Tokumaru ametlik lõunamenüü",
+      "url": "https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy",
+      "status": "active",
+      "message": "Balti Jaama, Solarise ja T1 argipäevased kombod ning päeva-donid.",
+      "lastSuccessAt": "2026-11-03T19:45:47.532Z"
     },
     {
       "id": "paevapakkumised",
       "name": "Päevapakkumised.ee",
       "url": "https://www.xn--pevapakkumised-5hb.ee/tallinn",
       "status": "permission-required",
-      "message": "Tallinna tänased tulemused avanevad algallikas otse brauseris; Lõunaleidjas taasavaldamiseks on vaja kirjalikku luba.",
+      "message": "Viide algallikale; Lõunaleidja kogub kuvatavad road sõltumatult söögikohtade endi menüülehtedelt.",
       "lastSuccessAt": null
     },
     {

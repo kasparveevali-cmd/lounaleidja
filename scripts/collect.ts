@@ -17,6 +17,17 @@ import {
   parseVapianoHtml,
   type ParsedOffer,
 } from './parsers.ts'
+import {
+  parseAlfredHtml,
+  parseAlleeHtml,
+  parseOmHouseHtml,
+  parseScotlandYardHtml,
+  parseSushiArtHtml,
+} from './extra-sources-b.ts'
+import {
+  parsePokeBowlLunchHtml,
+  parseTokumaruLunchHtml,
+} from './extra-sources-a.ts'
 import { parsePartnerFeed, partnerSourceId } from './partner-feed.ts'
 
 const outputPath = new URL('../public/data/offers.json', import.meta.url)
@@ -114,11 +125,67 @@ const sourceStatuses: SourceStatus[] = [
     lastSuccessAt: null,
   },
   {
+    id: 'alfred-pub',
+    name: 'Alfred Pubi ametlik nädalamenüü',
+    url: 'https://alfred.ee/',
+    status: 'active',
+    message: 'Ametliku lehe täpse kuupäevaga päevapraad, supp ja komplekt.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'scotland-yard',
+    name: 'Scotland Yardi ametlik lõunamenüü',
+    url: 'https://www.scotlandyard.ee/louna/',
+    status: 'active',
+    message: 'Jooksva nädala päevapraad, päevasupp ja nädalapraad koos hindadega.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'om-house',
+    name: 'Om.House’i ametlik lõunamenüü',
+    url: 'https://omhouse.ee/et/our-menu',
+    status: 'active',
+    message: 'Nädalapäevapõhised lõunaroad ja argipäevane poke-baar.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'sushiart',
+    name: 'SushiArt’i ametlik lõunamenüü',
+    url: 'https://sushiart.ee/',
+    status: 'active',
+    message: 'Arsenal Keskuse nädalapäevapõhised sushi- ja donburi-pakkumised.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'allee',
+    name: 'ALLEE restorani ametlik lõunamenüü',
+    url: 'https://www.alleerestoran.ee/menuu/',
+    status: 'active',
+    message: 'Ametliku lehe kuupäevaga päevapraad ja päevasupp.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'poke-bowl',
+    name: 'Poké Bowli ametlik lõunamenüü',
+    url: 'https://pokebowl.ee/louna/',
+    status: 'active',
+    message: 'Jooksva nädala päevapakkumine neljas Tallinna asukohas; Kristiine on kaetud keskuse ametliku vooga.',
+    lastSuccessAt: null,
+  },
+  {
+    id: 'tokumaru',
+    name: 'Tokumaru ametlik lõunamenüü',
+    url: 'https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy',
+    status: 'active',
+    message: 'Balti Jaama, Solarise ja T1 argipäevased kombod ning päeva-donid.',
+    lastSuccessAt: null,
+  },
+  {
     id: 'paevapakkumised',
     name: 'Päevapakkumised.ee',
     url: 'https://www.xn--pevapakkumised-5hb.ee/tallinn',
     status: 'permission-required',
-    message: 'Tallinna tänased tulemused avanevad algallikas otse brauseris; Lõunaleidjas taasavaldamiseks on vaja kirjalikku luba.',
+    message: 'Viide algallikale; Lõunaleidja kogub kuvatavad road sõltumatult söögikohtade endi menüülehtedelt.',
     lastSuccessAt: null,
   },
   {
@@ -234,6 +301,102 @@ const soorikukohvikLocations: Record<'kentmanni' | 'nomme', RestaurantLocation> 
     longitude: 24.6849057,
   },
 }
+
+const additionalOfficialLocations: Record<'alfred' | 'scotlandYard' | 'omHouse' | 'sushiArt' | 'allee', RestaurantLocation> = {
+  alfred: {
+    id: 'alfred-pub-nomme',
+    name: 'Alfred Pub',
+    address: 'Rahumäe tee 25, Tallinn',
+    latitude: 59.3891992,
+    longitude: 24.7025144,
+  },
+  scotlandYard: {
+    id: 'scotland-yard-tallinn',
+    name: 'Scotland Yard',
+    address: 'Mere pst 6, Tallinn',
+    latitude: 59.4390203,
+    longitude: 24.7543785,
+  },
+  omHouse: {
+    id: 'om-house-rotermanni',
+    name: 'Om.House',
+    address: 'Rotermanni 18/2, Tallinn',
+    latitude: 59.4394319,
+    longitude: 24.758036,
+  },
+  sushiArt: {
+    id: 'sushiart-arsenal',
+    name: 'SushiArt Arsenal',
+    address: 'Erika 14, Tallinn',
+    latitude: 59.4514602,
+    longitude: 24.7173827,
+  },
+  allee: {
+    id: 'allee-restoran',
+    name: 'Restoran ALLEE',
+    address: 'Aia 18, Tallinn',
+    latitude: 59.4397428,
+    longitude: 24.7512851,
+  },
+}
+
+const pokeBowlLocations: RestaurantLocation[] = [
+  {
+    id: 'poke-bowl-mustamae',
+    name: 'Poké Bowl Mustamäe',
+    address: 'A. H. Tammsaare tee 104a, Tallinn',
+    latitude: 59.4085035,
+    longitude: 24.6887486,
+  },
+  {
+    id: 'poke-bowl-jarve',
+    name: 'Poké Bowl Järve',
+    address: 'Pärnu maantee 238, Tallinn',
+    latitude: 59.393409,
+    longitude: 24.7192687,
+  },
+  {
+    id: 'poke-bowl-ulemiste',
+    name: 'Poké Bowl Ülemiste',
+    address: 'Suur-Sõjamäe 4, Tallinn',
+    latitude: 59.4215906,
+    longitude: 24.7941522,
+  },
+  {
+    id: 'poke-bowl-viru',
+    name: 'Poké Bowl Viru',
+    address: 'Viru väljak 4, Tallinn',
+    latitude: 59.4365992,
+    longitude: 24.7549171,
+  },
+]
+
+const tokumaruLocations: Array<RestaurantLocation & { sourceUrl: string }> = [
+  {
+    id: 'tokumaru-balti-jaam',
+    name: 'Tokumaru Balti Jaama Turg',
+    address: 'Kopli 1, Tallinn',
+    latitude: 59.4412223,
+    longitude: 24.7350877,
+    sourceUrl: 'https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy',
+  },
+  {
+    id: 'tokumaru-solaris',
+    name: 'Tokumaru Solaris',
+    address: 'Estonia pst 9, Tallinn',
+    latitude: 59.4332203,
+    longitude: 24.7518993,
+    sourceUrl: 'https://www.tokumaru.ee/menyy/solaris/lounamenyy',
+  },
+  {
+    id: 'tokumaru-t1',
+    name: 'Tokumaru T1',
+    address: 'Peterburi tee 2, Tallinn',
+    latitude: 59.4248486,
+    longitude: 24.7959274,
+    sourceUrl: 'https://www.tokumaru.ee/menyy/t1/lounamenyy',
+  },
+]
 
 function tallinnDateParts(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
@@ -703,6 +866,123 @@ async function collectSoorikukohvik(now = new Date()) {
   return offers
 }
 
+async function collectAlfred(now = new Date()) {
+  const sourceUrl = 'https://alfred.ee/'
+  const date = tallinnDateParts(now)
+  const parsed = parseAlfredHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, additionalOfficialLocations.alfred, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Alfred Pubi ametlik nädalamenüü',
+    sourceUrl,
+    lunchStartTime: null,
+    lunchEndTime: null,
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
+  return offers
+}
+
+async function collectScotlandYard(now = new Date()) {
+  const sourceUrl = 'https://www.scotlandyard.ee/louna/'
+  const date = tallinnDateParts(now)
+  const parsed = parseScotlandYardHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, additionalOfficialLocations.scotlandYard, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Scotland Yardi ametlik lõunamenüü',
+    sourceUrl,
+    lunchStartTime: '12:00',
+    lunchEndTime: '15:00',
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Jooksva nädala tänast menüüd ei leitud')
+  return offers
+}
+
+async function collectOmHouse(now = new Date()) {
+  const sourceUrl = 'https://omhouse.ee/et/our-menu'
+  const date = tallinnDateParts(now)
+  const parsed = parseOmHouseHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, additionalOfficialLocations.omHouse, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Om.House’i ametlik lõunamenüü',
+    sourceUrl,
+    lunchStartTime: '12:00',
+    lunchEndTime: '15:00',
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Tänase nädalapäeva menüüd ei leitud')
+  return offers
+}
+
+async function collectSushiArt(now = new Date()) {
+  const sourceUrl = 'https://sushiart.ee/'
+  const date = tallinnDateParts(now)
+  const parsed = parseSushiArtHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, additionalOfficialLocations.sushiArt, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'SushiArt’i ametlik lõunamenüü',
+    sourceUrl,
+    lunchStartTime: '11:00',
+    lunchEndTime: '16:00',
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Tänase nädalapäeva menüüd ei leitud')
+  return offers
+}
+
+async function collectAllee(now = new Date()) {
+  const sourceUrl = 'https://www.alleerestoran.ee/menuu/'
+  const date = tallinnDateParts(now)
+  const parsed = parseAlleeHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = offersForLocation(parsed, additionalOfficialLocations.allee, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'ALLEE restorani ametlik lõunamenüü',
+    sourceUrl,
+    lunchStartTime: '12:00',
+    lunchEndTime: '15:00',
+  })
+  if (date.isWeekday && !offers.length) throw new Error('Tänase kuupäevaga menüüd ei leitud')
+  return offers
+}
+
+async function collectPokeBowl(now = new Date()) {
+  const sourceUrl = 'https://pokebowl.ee/louna/'
+  const date = tallinnDateParts(now)
+  const menu = parsePokeBowlLunchHtml(await fetchSource(sourceUrl), date.iso)
+  const offers = pokeBowlLocations.flatMap((location) => offersForLocation(menu.offers, location, {
+    offerDate: date.iso,
+    fetchedAt: now.toISOString(),
+    sourceName: 'Poké Bowli ametlik lõunamenüü',
+    sourceUrl,
+    lunchStartTime: menu.lunchStartTime,
+    lunchEndTime: menu.lunchEndTime,
+  }))
+  if (date.isWeekday && !offers.length) throw new Error('Jooksva nädala tänast menüüd ei leitud')
+  return offers
+}
+
+async function collectTokumaru(now = new Date()) {
+  const date = tallinnDateParts(now)
+  const fetchedAt = now.toISOString()
+  const offers: LunchOffer[] = []
+  for (const location of tokumaruLocations) {
+    const menu = parseTokumaruLunchHtml(await fetchSource(location.sourceUrl), date.iso)
+    if (date.isWeekday && !menu.offers.length) {
+      throw new Error(`${location.name} tänast menüüd ei leitud`)
+    }
+    offers.push(...offersForLocation(menu.offers, location, {
+      offerDate: date.iso,
+      fetchedAt,
+      sourceName: 'Tokumaru ametlik lõunamenüü',
+      sourceUrl: location.sourceUrl,
+      lunchStartTime: menu.lunchStartTime,
+      lunchEndTime: menu.lunchEndTime,
+    }))
+  }
+  return offers
+}
+
 function isValidOffer(offer: LunchOffer): boolean {
   return Boolean(
     offer.restaurantId &&
@@ -759,6 +1039,13 @@ const collectors: Array<{
   { id: 'rahvatoit-tornimae', sourceName: 'Rahva Toit Tornimäe ametlik menüü', collect: collectRahvatoitTornimae },
   { id: 'cafe-boulevard', sourceName: 'Café Boulevardi ametlik päevapakkumine', collect: collectCafeBoulevard },
   { id: 'soorikukohvik', sourceName: 'Sõõrikukohviku ametlik menüü', collect: collectSoorikukohvik },
+  { id: 'alfred-pub', sourceName: 'Alfred Pubi ametlik nädalamenüü', collect: collectAlfred },
+  { id: 'scotland-yard', sourceName: 'Scotland Yardi ametlik lõunamenüü', collect: collectScotlandYard },
+  { id: 'om-house', sourceName: 'Om.House’i ametlik lõunamenüü', collect: collectOmHouse },
+  { id: 'sushiart', sourceName: 'SushiArt’i ametlik lõunamenüü', collect: collectSushiArt },
+  { id: 'allee', sourceName: 'ALLEE restorani ametlik lõunamenüü', collect: collectAllee },
+  { id: 'poke-bowl', sourceName: 'Poké Bowli ametlik lõunamenüü', collect: collectPokeBowl },
+  { id: 'tokumaru', sourceName: 'Tokumaru ametlik lõunamenüü', collect: collectTokumaru },
 ]
 
 async function main() {

@@ -35,17 +35,24 @@ Lõunaleidja on eestikeelne veebirakendus, mis kuvab kasutaja lähedal asuvaid t
 | [Rahva Toit Tornimäe](https://rahvatoit.ee/tornimae/) | töötab | Ametlik kuupäevaga päeva menüü kuvatakse nimega „Rahva Toit Tornimäe (SEB)”. Kahe suuruse või portsjoni korral näidatakse alghinda ja kirjelduses mõlemat hinda. |
 | [Café Boulevardi päevapakkumine](https://www.cafeboulevard.ee/special/kuum-supp-nii-lounal-parastlounal-kui-ohtul-kohapeal-ja-kaasa/) | töötab | Ametlik leht kinnitab iga päev pakutava supi ja hinna, kuid ei nimeta supi liiki; seepärast kuvatakse see nimega „Päeva supp”. |
 | [Sõõrikukohvik](https://soorikukohvik.ee/) | töötab | Kentmanni lehe päevasupp ja päevapraed ning Nõmme päevasupp ja ametliku püsimenüü praed. Nõmme praed on eksituse vältimiseks märgitud püsimenüüks. |
-| [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/tallinn) | avaneb brauseris; taasavaldamine vajab luba | Tallinna tänaste pakkumiste juurde viib põhivaates nähtav otselink. Midagi paigaldada pole vaja, kuid teenuse kasutustingimused ei luba tulemusi Lõunaleidjasse automaatselt kopeerida. |
+| [Alfred Pub](https://alfred.ee/) | töötab | Ametliku lehe täpse kuupäevaga päevapraad, supp ja komplekt Rahumäe tee asukohale. |
+| [Scotland Yard](https://www.scotlandyard.ee/louna/) | töötab | Jooksva nädala päevapraad, päeva järgi valitud supp ja nädalapraad koos hindadega. |
+| [Om.House](https://omhouse.ee/et/our-menu) | töötab | Nädalapäevapõhised lõunaroad ja argipäevane poke-baar Rotermanni asukohale. |
+| [SushiArt](https://sushiart.ee/) | töötab | Arsenal Keskuse nädalapäevapõhised sushi- ja donburi-pakkumised. |
+| [Restoran ALLEE](https://www.alleerestoran.ee/menuu/) | töötab | Kuupäevaga päevapraad ja päevasupp koos ametlike hindadega. |
+| [Poké Bowl](https://pokebowl.ee/louna/) | töötab | Jooksva nädala päevapakkumine Mustamäe, Järve, Ülemiste ja Viru asukohale; Kristiine on kaetud Kristiine Keskuse ametliku vooga ning lehe muutmiskuupäev takistab vana nädala menüü avaldamist. |
+| [Tokumaru](https://www.tokumaru.ee/menyy/balti-jaama-turg/lounamenyy) | töötab | Balti Jaama, Solarise ja T1 argipäevased kombod ning tänase päeva don-pakkumised. |
+| [Päevapakkumised.ee](https://www.xn--pevapakkumised-5hb.ee/tallinn) | viide; taasavaldamine vajab luba | Tagasihoidlik algallika viide jääb „Andmetest” loendisse, kuid kuvatavad road kogutakse sõltumatult söögikohtade endi ametlikelt menüülehtedelt. |
 | [Päevapraad.ee](https://www.paevapraad.ee/lahendused/) | vajab kirjalikku luba | Teenusel on veebilehe- ja ekraaniintegratsioonid, kuid avalikku litsentsitud API-t pole dokumenteeritud. |
 
-Koondallikate sisu ei kirjutata repos hallatavasse `public/data/offers.json` faili. GitHub Actions loob selle eraldi failina `public/data/aggregator-offers.json` ainult Pagesi ehituse ajaks; fail on `.gitignore`-is ja seda ei commit'ita. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Litsentsitud JSON-voo adapter, täpne skeem ja GitHubi secret'ite seadistus on kirjeldatud failis [`docs/litsentsitud-partnerivoog.md`](docs/litsentsitud-partnerivoog.md). Uusi ametlikke allikaid lisatakse adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failis `scripts/parsers.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
+Koondallikate sisu ei kirjutata repos hallatavasse `public/data/offers.json` faili. GitHub Actions loob selle eraldi failina `public/data/aggregator-offers.json` ainult Pagesi ehituse ajaks; fail on `.gitignore`-is ja seda ei commit'ita. Valmis kontaktid, nõuded ja partnerluskirja mustand on failis [`docs/andmeallikate-partnerlus.md`](docs/andmeallikate-partnerlus.md). Litsentsitud JSON-voo adapter, täpne skeem ja GitHubi secret'ite seadistus on kirjeldatud failis [`docs/litsentsitud-partnerivoog.md`](docs/litsentsitud-partnerivoog.md). Uusi ametlikke allikaid lisatakse adapteritena faili `scripts/collect.ts`; puhtad parserid asuvad failides `scripts/parsers.ts` ja `scripts/extra-sources-*.ts`. Kuupäevaga erandandmeid saab lisada faili `data/manual-offers.json`.
 
 ## Koondallikad
 
-Päevapraad.ee andmed kogutakse GitHub Actionsis enne veebilehe ehitamist. Nii saab sama päeva pakkumisi kasutada kõigis seadmetes ilma brauserilaienduseta. Väljund lisatakse Pagesi artefakti, kuid jäetakse Git-ajaloost välja. Päevapakkumised.ee Tallinna tulemuste juurde viib põhivaate otselink; nende sisu Lõunaleidjasse ei kopeerita ilma kirjaliku loata.
+Päevapraad.ee ja Päevapakkumised.ee automatiseeritud koondvood on ilma kirjaliku loata välja lülitatud. Sama seadmeteülene kasutusmugavus saavutatakse restoranide endi allikatest kogutava vooga. Päevapakkumised.ee viide jääb „Andmetest” loendisse.
 
 - `pnpm collect:aggregators` loob Pagesi jaoks faili `public/data/aggregator-offers.json`.
-- Päevapakkumised.ee automatiseeritud voog on vaikimisi välja lülitatud. Pärast kirjaliku loa saamist saab selle lubada keskkonnamuutujaga `LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED=true`.
+- Mõlema koondportaali automatiseeritud voog on vaikimisi välja lülitatud. Pärast kirjaliku loa saamist saab vastava voo lubada keskkonnamuutujaga `LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED=true` või `LOUNALEIDJA_PAEVAPRAAD_FEED_ENABLED=true`.
 - Koguja kontrollib lehel olevat kuupäeva, hindu, allika hosti ja Eesti koordinaate. Päevapraad.ee kirje kuvatakse kaardil ainult siis, kui asukoht saab üheselt sobitatud Päevapakkumised.ee või ametliku voo asukohaga.
 - Kui üks koondallikas ajutiselt ebaõnnestub, avaldatakse teise allika edukalt kogutud pakkumised koos allikapõhise veateatega.
 
@@ -77,7 +84,7 @@ Kõik kontrollid korraga:
 pnpm check
 ```
 
-Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO, Arteri kvartali, Ülemiste City, Rahva Toidu, Café Boulevardi ja Sõõrikukohviku menüüparserid.
+Testid katavad muu hulgas kaugusarvutuse, tänase kuupäeva filtri, otsinguraadiuse, hinnavahemiku ning Kristiine, Revali, Vapiano, AMPSi, PROTO, Arteri kvartali, Ülemiste City, Rahva Toidu, Café Boulevardi, Sõõrikukohviku, Alfred Pubi, Scotland Yardi, Om.House’i, SushiArt’i, ALLEE, Poké Bowli ja Tokumaru menüüparserid.
 
 ## Automaatne uuendamine
 

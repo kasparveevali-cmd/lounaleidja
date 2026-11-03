@@ -408,7 +408,7 @@ main {
 
 .aggregator-feed-banner {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   margin-top: 14px;
@@ -458,53 +458,6 @@ main {
 
 .aggregator-feed-copy .aggregator-feed-error {
   color: #8a4939;
-}
-
-.aggregator-external-link {
-  min-width: 0;
-  min-height: 44px;
-  padding: 7px 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  border: 1px solid var(--sage-dark);
-  border-radius: 10px;
-  color: #fff;
-  background: var(--sage-dark);
-  font-size: 11px;
-  line-height: 1.2;
-  text-align: left;
-  text-decoration: none;
-  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
-}
-
-.aggregator-external-link strong,
-.aggregator-external-link small {
-  display: block;
-}
-
-.aggregator-external-link strong {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.aggregator-external-link small {
-  margin-top: 2px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 9px;
-  font-weight: 500;
-}
-
-.aggregator-external-link:hover {
-  border-color: var(--sage);
-  background: var(--sage);
-  transform: translateY(-1px);
-}
-
-.aggregator-external-link:focus-visible {
-  outline: 3px solid rgba(83, 122, 104, 0.24);
-  outline-offset: 2px;
 }
 
 .results-section {
@@ -1280,11 +1233,6 @@ main {
     align-items: start;
     grid-template-columns: auto minmax(0, 1fr);
     padding: 12px;
-  }
-
-  .aggregator-external-link {
-    grid-column: 1 / -1;
-    width: 100%;
   }
 
   .results-heading {

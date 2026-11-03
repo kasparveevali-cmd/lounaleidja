@@ -45,6 +45,7 @@ jobs:
       - name: Koosta koondallikate andmefail
         env:
           LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED: ${{ vars.LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED }}
+          LOUNALEIDJA_PAEVAPRAAD_FEED_ENABLED: ${{ vars.LOUNALEIDJA_PAEVAPRAAD_FEED_ENABLED }}
         run: pnpm collect:aggregators
 
       - name: Kontrolli ja ehita

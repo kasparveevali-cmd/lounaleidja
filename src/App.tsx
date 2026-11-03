@@ -1,7 +1,6 @@
 import {
   AlertCircle,
   ArrowRight,
-  ArrowUpRight,
   CalendarDays,
   CheckCircle2,
   Database,
@@ -200,19 +199,6 @@ export default function App() {
             </span>
             {aggregatorError && <small className="aggregator-feed-error" role="alert">{aggregatorError}</small>}
           </div>
-          <a
-            className="aggregator-external-link"
-            href="https://www.xn--pevapakkumised-5hb.ee/tallinn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Vaata Päevapakkumised.ee Tallinna päevapakkumisi (avaneb uuel vahelehel)"
-          >
-            <span>
-              <strong>Vaata Tallinna pakkumisi</strong>
-              <small>Avaneb brauseris · allalaadimist pole vaja</small>
-            </span>
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
         </section>
 
         <section className="results-section">

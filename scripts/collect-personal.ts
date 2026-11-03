@@ -105,16 +105,20 @@ async function main() {
   const officialJson = await readFile(officialOffersPath, 'utf8')
   const official = JSON.parse(officialJson) as OffersBundle
   const paevapakkumisedEnabled = process.env.LOUNALEIDJA_PAEVAPAKKUMISED_FEED_ENABLED === 'true'
+  const paevapraadEnabled = process.env.LOUNALEIDJA_PAEVAPRAAD_FEED_ENABLED === 'true'
   const paevapakkumisedPromise = paevapakkumisedEnabled
     ? fetchHtml(targetPages.paevapakkumised).then((html) => (
         parsePaevapakkumisedHtml(html, offerDate)
       ))
     : Promise.resolve(unavailablePage('paevapakkumised'))
+  const paevapraadPromise = paevapraadEnabled
+    ? fetchHtml(targetPages.paevapraad).then((html) => (
+        parsePaevapraadHtml(html, offerDate)
+      ))
+    : Promise.resolve(unavailablePage('paevapraad'))
   const [paevapakkumisedResult, paevapraadResult] = await Promise.allSettled([
     paevapakkumisedPromise,
-    fetchHtml(targetPages.paevapraad).then((html) => (
-      parsePaevapraadHtml(html, offerDate)
-    )),
+    paevapraadPromise,
   ])
   const failures = new Map<PersonalAggregator, string>()
   const paevapakkumised = paevapakkumisedResult.status === 'fulfilled'
@@ -148,7 +152,15 @@ async function main() {
     const source = bundle.sources.find((item) => item.id === 'paevapakkumised')
     if (source) {
       source.status = 'permission-required'
-      source.message = 'Tallinna tänased tulemused avanevad algallikas brauseris; automaatne voog aktiveeritakse ainult kirjaliku loa korral.'
+      source.message = 'Viide algallikale; Lõunaleidja kogub kuvatavad road sõltumatult söögikohtade endi menüülehtedelt.'
+      source.lastSuccessAt = null
+    }
+  }
+  if (!paevapraadEnabled) {
+    const source = bundle.sources.find((item) => item.id === 'paevapraad')
+    if (source) {
+      source.status = 'permission-required'
+      source.message = 'Automaatne voog on välja lülitatud; aktiveerimiseks on vaja kirjalikku taasavaldamise luba.'
       source.lastSuccessAt = null
     }
   }
